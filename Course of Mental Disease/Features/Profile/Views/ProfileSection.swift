@@ -41,12 +41,12 @@ struct ProfileSection: View {
                         Text(viewModel.name)
                             .frame(width: 155, height: 0)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
-//                        Text(viewModel.email)
-//                            .frame(width: 155, height: 0)
-//                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
-//                        Text(viewModel.name)
-//                            .frame(width: 155, height: 0)
-//                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
+                        Text(viewModel.email)
+                            .frame(width: 155, height: 0)
+                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
+                        Text(viewModel.name)
+                            .frame(width: 155, height: 0)
+                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
                     }
                 }
             }

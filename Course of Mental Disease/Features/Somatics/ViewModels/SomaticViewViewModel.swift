@@ -10,14 +10,6 @@ import Factory
 
 final class SomaticViewViewModel: ObservableObject {
     
-//    enum Ranges: String, Identifiable, CaseIterable {
-//        case today = "Сегодня"
-//        case yesterday = "Вчера"
-//        case twoWeeks = "Последние 14 дней"
-//        case customRange = "Выбрать период"
-//        var id: Self { self }
-//    }
-    
     @Published var startDate = Date()
     @Published var endDate = Date()
     @Published var range: DateRangeType = .today
@@ -56,14 +48,5 @@ final class SomaticViewViewModel: ObservableObject {
             errorHandler.handle(error)
         }
     }
-    
-//    func getDateRange() -> (Date, Date) {
-//        switch range {
-//        case .today: return (Date(), Date())
-//        case .yesterday: return (Date(timeIntervalSinceNow: -86400), Date(timeIntervalSinceNow: -86400))
-//        case .twoWeeks: return (Date(timeIntervalSinceNow: -1209600), Date())
-//        case .customRange: return (startDate, endDate)
-//        }
-//    }
     
 }

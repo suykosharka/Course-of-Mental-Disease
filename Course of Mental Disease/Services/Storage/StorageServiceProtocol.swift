@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+protocol StorageServiceProtocol {
+    
+    func uploadImage(_ image: UIImage?) async throws -> String?
+    
+    func downloadImage(_ path: String) async throws -> Data
+    
+}

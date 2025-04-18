@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+final class SupabaseProfileService: ProfileServiceProtocol {
+    
+    func fetchProfile(for userID: String) async throws -> Profile {
+        try await supabase
+          .from("profiles")
+          .select()
+          .eq("id", value: userID)
+          .single()
+          .execute()
+          .value
+    }
+    
+}

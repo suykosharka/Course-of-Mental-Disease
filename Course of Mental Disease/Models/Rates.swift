@@ -10,6 +10,7 @@ import Foundation
 struct Rates {
     
     enum Apetite: Int8, CustomStringConvertible, Identifiable, CaseIterable {
+        
         case absence = -3
         case worse = -2
         case less = -1
@@ -17,6 +18,7 @@ struct Rates {
         case much = 1
         case more = 2
         case excess = 3
+        
         var description : String {
             switch self {
             case .absence: return "У меня вообще нет аппетита"
@@ -27,12 +29,12 @@ struct Rates {
             case .more: return "Мой аппетит намного больше обычного"
             case .excess: return "Я всё время хочу есть"
             }
-            
         }
         var id: Self { self }
     }
     
     enum Sleep: Int8, CustomStringConvertible, Identifiable, CaseIterable {
+        
         case absence = -3
         case worse = -2
         case less = -1
@@ -40,6 +42,7 @@ struct Rates {
         case much = 1
         case more = 2
         case excess = 3
+        
         var description : String {
             switch self {
             case .absence: return "Я просыпаюсь через каждый час или два"
@@ -50,12 +53,12 @@ struct Rates {
             case .more: return "Я сплю намного больше, чем обычно"
             case .excess: return "Я сплю большую часть дня"
             }
-            
         }
         var id: Self { self }
     }
     
     enum Energy: Int8, CustomStringConvertible, Identifiable, CaseIterable {
+        
         case absence = -3
         case worse = -2
         case less = -1
@@ -63,6 +66,7 @@ struct Rates {
         case much = 1
         case more = 2
         case excess = 3
+        
         var description : String {
             switch self {
             case .absence: return "У меня ни на что не хватает сил"
@@ -73,12 +77,12 @@ struct Rates {
             case .more: return "Меня переполняет энергия"
             case .excess: return "Я постоянно активен и не нуждаюсь в отдыхе"
             }
-            
         }
         var id: Self { self }
     }
     
     enum Libido: Int8, CustomStringConvertible, Identifiable, CaseIterable {
+        
         case absence = -3
         case worse = -2
         case less = -1
@@ -86,6 +90,7 @@ struct Rates {
         case much = 1
         case more = 2
         case excess = 3
+        
         var description : String {
             switch self {
             case .absence: return "Я полностью утратил сексуальный интерес"

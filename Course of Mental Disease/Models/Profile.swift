@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 struct Profile: Decodable {
+    
   let email: String?
   let name: String?
   let avatarURL: String?
@@ -16,4 +18,5 @@ struct Profile: Decodable {
     case name = "full_name"
     case avatarURL = "avatar_url"
   }
+    
 }

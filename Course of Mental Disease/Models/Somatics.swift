@@ -7,9 +7,9 @@
 
 import Foundation
 
-import Foundation
 struct Somatics: Decodable, Encodable {
-    let profile_id: UUID
+    
+    let profile_id: String
     let date: String
     let apetiteRate: Int8
     let sleepRate: Int8
@@ -24,4 +24,5 @@ struct Somatics: Decodable, Encodable {
         case energyRate = "energy_rate"
         case libidoRate = "libido_rate"
     }
+    
 }

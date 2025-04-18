@@ -6,22 +6,24 @@
 //
 
 import Foundation
+import Factory
 
-final class DIContainer {
-    static let shared = DIContainer()
+extension Container {
 
-    let authService: any AuthServiceProtocol
-    let storageService: StorageServiceProtocol
-    let profileService: ProfileServiceProtocol
-    let somaticService: SomaticServiceProtocol
-    let errorHandler: ErrorHandlerProtocol
-
-    private init() {
-        self.authService = SupabaseAuthService()
-        self.storageService = SupabaseStorageService()
-        self.profileService = SupabaseProfileService()
-        self.somaticService = SupabaseSomaticService()
-        self.errorHandler = SupabaseErrorHandler()
+    var authService: Factory<AuthServiceProtocol> {
+        self { SupabaseAuthService() }
+    }
+    var storageService: Factory<StorageServiceProtocol> {
+        self { SupabaseStorageService() }
+    }
+    var profileService: Factory<ProfileServiceProtocol> {
+        self { SupabaseProfileService() }
+    }
+    var somaticService: Factory<SomaticServiceProtocol> {
+        self { SupabaseSomaticService() }
+    }
+    var errorHandler: Factory<ErrorHandlerProtocol> {
+        self { SupabaseErrorHandler() }
     }
     
 }

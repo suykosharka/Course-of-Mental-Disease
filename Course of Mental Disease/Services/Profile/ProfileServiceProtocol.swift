@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol ProfileServiceProtocol {
+    
+    func fetchProfile(for userID: String) async throws -> Profile
+    
+}

@@ -15,21 +15,6 @@ final class MainViewViewModel: ObservableObject {
     
     @Injected(\.authService) private var authService: AuthServiceProtocol
     
-//    func authenticate() async {
-//        await MainActor.run { isLoaded = false }
-//        let start = Date()
-//        for await state in supabase.auth.authStateChanges {
-//            if [.initialSession, .signedIn, .signedOut].contains(state.event) {
-//                await MainActor.run { isAuthenticated = state.session != nil }
-//                let elapsed = Date().timeIntervalSince(start)
-//                if elapsed < 2 {
-//                    try? await Task.sleep(nanoseconds: UInt64((2-elapsed) * 1_000_000_000))
-//                }
-//                await MainActor.run { isLoaded = true }
-//            }
-//        }
-//    }
-    
     func authenticate() async {
         await MainActor.run { isLoaded = false }
         let start = Date()

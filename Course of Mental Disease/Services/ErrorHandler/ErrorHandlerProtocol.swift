@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol ErrorHandlerProtocol {
+    
+    func errorMessage(for error: Error) -> String?
+    
+    func handle(_ error: Error)
+    
+}

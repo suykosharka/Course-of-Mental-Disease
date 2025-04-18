@@ -19,12 +19,11 @@ struct AuthorizationPagesBackground: View {
                 .scaleEffect(1.75)
                 .foregroundColor(.white.opacity(0.15))
                 .scaledToFit()
-                .navigationViewStyle(StackNavigationViewStyle())
             
             Circle()
                 .scaleEffect(1.25)
                 .foregroundColor(.white.opacity(0.75))
-                .navigationViewStyle(StackNavigationViewStyle())
+            
         }
     }
 }

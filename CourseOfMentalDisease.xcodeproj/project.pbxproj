@@ -3,119 +3,75 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A02322BD2D97294D004C1CB3 /* CustomGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02322BC2D97294D004C1CB3 /* CustomGauge.swift */; };
 		A02322BF2D973FCA004C1CB3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02322BE2D973FCA004C1CB3 /* Colors.xcassets */; };
-		A039A7632D9AE39C0091F69F /* SomaticNewRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039A7622D9AE39C0091F69F /* SomaticNewRecord.swift */; };
-		A039A7652D9AE4680091F69F /* SomaticNewRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039A7642D9AE4680091F69F /* SomaticNewRecordViewModel.swift */; };
 		A039A7672D9AF3610091F69F /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039A7662D9AF3610091F69F /* CustomPicker.swift */; };
 		A039A76D2D9B3ACB0091F69F /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039A76C2D9B3ACB0091F69F /* Rates.swift */; };
 		A039A76F2D9B49390091F69F /* Somatics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039A76E2D9B49390091F69F /* Somatics.swift */; };
 		A03A764E2AFF95B300A312A8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A764D2AFF95B300A312A8 /* ImagePicker.swift */; };
-		A040DA402B0907CC00CEBA8B /* SomaticSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040DA3F2B0907CC00CEBA8B /* SomaticSection.swift */; };
 		A043595E2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043595D2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift */; };
 		A054DD482B022F89009E9EA7 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054DD472B022F89009E9EA7 /* CustomTextFields.swift */; };
 		A054DD4A2B0233A2009E9EA7 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054DD492B0233A2009E9EA7 /* CustomButtons.swift */; };
-		A05666012AFD0FB800904913 /* appetite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05665FF2AFD0FB800904913 /* appetite.ttf */; };
-		A05EAD472D620E5B00F2BFE8 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD462D620E5B00F2BFE8 /* MainViewViewModel.swift */; };
-		A05EAD492D620E8000F2BFE8 /* ProfileSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD482D620E8000F2BFE8 /* ProfileSectionViewModel.swift */; };
-		A05EAD4B2D620EA200F2BFE8 /* MainPageViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD4A2D620EA200F2BFE8 /* MainPageViewViewModel.swift */; };
-		A05EAD4D2D620EB500F2BFE8 /* LogInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD4C2D620EB500F2BFE8 /* LogInViewViewModel.swift */; };
-		A05EAD4F2D620EC900F2BFE8 /* SignUpViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD4E2D620EC900F2BFE8 /* SignUpViewViewModel.swift */; };
-		A05EAD512D620ED800F2BFE8 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD502D620ED700F2BFE8 /* ProfileViewViewModel.swift */; };
-		A05EAD532D620EF100F2BFE8 /* SomaticSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD522D620EF100F2BFE8 /* SomaticSectionViewModel.swift */; };
-		A05EAD552D620F0600F2BFE8 /* SomaticViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD542D620F0600F2BFE8 /* SomaticViewViewModel.swift */; };
-		A05EAD572D620F2200F2BFE8 /* EmotionsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD562D620F2200F2BFE8 /* EmotionsSectionViewModel.swift */; };
-		A05EAD592D620F2F00F2BFE8 /* EmotionsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD582D620F2F00F2BFE8 /* EmotionsViewViewModel.swift */; };
-		A05EAD5B2D62109400F2BFE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A05EAD5A2D62109400F2BFE8 /* GoogleService-Info.plist */; };
 		A05EAD672D629F2A00F2BFE8 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD662D629F2A00F2BFE8 /* Auth */; };
 		A05EAD692D629F2A00F2BFE8 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD682D629F2A00F2BFE8 /* Functions */; };
 		A05EAD6B2D629F2A00F2BFE8 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD6A2D629F2A00F2BFE8 /* PostgREST */; };
 		A05EAD6D2D629F2A00F2BFE8 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD6C2D629F2A00F2BFE8 /* Realtime */; };
 		A05EAD6F2D629F2A00F2BFE8 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD6E2D629F2A00F2BFE8 /* Storage */; };
 		A05EAD712D629F2A00F2BFE8 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A05EAD702D629F2A00F2BFE8 /* Supabase */; };
-		A05EAD732D629F6500F2BFE8 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD722D629F6500F2BFE8 /* Supabase.swift */; };
 		A05EAD792D62A12B00F2BFE8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAD782D62A12B00F2BFE8 /* Profile.swift */; };
 		A06216A12AFC2D5A005EDB5A /* CourseOfMentalDiseaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06216A02AFC2D5A005EDB5A /* CourseOfMentalDiseaseApp.swift */; };
-		A06216A32AFC2D5A005EDB5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06216A22AFC2D5A005EDB5A /* MainView.swift */; };
 		A06216A52AFC2D5B005EDB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06216A42AFC2D5B005EDB5A /* Assets.xcassets */; };
 		A06216A82AFC2D5B005EDB5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */; };
-		A06216AF2AFC2DAA005EDB5A /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06216AE2AFC2DAA005EDB5A /* ProfileSection.swift */; };
-		A06216B12AFC3899005EDB5A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06216B02AFC3899005EDB5A /* ProfileView.swift */; };
-		A06AA4C92D9DAF1700FF40A3 /* SomaticRecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06AA4C82D9DAF1700FF40A3 /* SomaticRecordsListView.swift */; };
-		A06AA4CB2D9DAFC200FF40A3 /* SomaticRecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06AA4CA2D9DAFC200FF40A3 /* SomaticRecordsListViewModel.swift */; };
-		A0AF97672DAC2C8C00F9423B /* LoadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF97662DAC2C8C00F9423B /* LoadScreen.swift */; };
+		A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D99982DB10B780072CD29 /* SomaticAverges.swift */; };
 		A0AF97822DAC470D00F9423B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */; };
 		A0AF97832DAC470D00F9423B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */; };
 		A0AF97842DAC470D00F9423B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */; };
 		A0C76EC82B06BC210082B49D /* ProfilePictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C76EC72B06BC210082B49D /* ProfilePictures.swift */; };
-		A0DDB6B72B01143E004F87A4 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DDB6B62B01143E004F87A4 /* MainPageView.swift */; };
 		A0E404EB2AFD78E500564519 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E404EA2AFD78E500564519 /* Extensions.swift */; };
 		A0EFD28B2DADBE3000FE8CC8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0EFD28A2DADBE3000FE8CC8 /* Launch Screen.storyboard */; };
-		A0EFD28D2DADC02600FE8CC8 /* TabViewTeest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EFD28C2DADC02600FE8CC8 /* TabViewTeest.swift */; };
-		A0F6BF6A2B38E2810049DEF0 /* SomaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6BF692B38E2810049DEF0 /* SomaticView.swift */; };
-		A0F6BF6C2B38E3410049DEF0 /* EmotionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6BF6B2B38E3410049DEF0 /* EmotionsSection.swift */; };
-		A0F6BF6E2B38E3520049DEF0 /* EmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6BF6D2B38E3520049DEF0 /* EmotionsView.swift */; };
-		A0FB0A8C2B01718300BE39BE /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0A8B2B01718300BE39BE /* LogInView.swift */; };
-		A0FB0A8E2B01719300BE39BE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0A8D2B01719300BE39BE /* SignUpView.swift */; };
+		A0F528D12DB2A26E00F0E5C1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A0F528D02DB2A26E00F0E5C1 /* Factory */; };
+		A0F528D42DB2D08100F0E5C1 /* OnFirstAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */; };
+		A0F528D62DB3081700F0E5C1 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F528D52DB3081700F0E5C1 /* DateRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A02322BC2D97294D004C1CB3 /* CustomGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGauge.swift; sourceTree = "<group>"; };
 		A02322BE2D973FCA004C1CB3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		A039A7622D9AE39C0091F69F /* SomaticNewRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticNewRecord.swift; sourceTree = "<group>"; };
-		A039A7642D9AE4680091F69F /* SomaticNewRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticNewRecordViewModel.swift; sourceTree = "<group>"; };
 		A039A7662D9AF3610091F69F /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		A039A76C2D9B3ACB0091F69F /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 		A039A76E2D9B49390091F69F /* Somatics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Somatics.swift; sourceTree = "<group>"; };
 		A03A764D2AFF95B300A312A8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		A040DA3F2B0907CC00CEBA8B /* SomaticSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticSection.swift; sourceTree = "<group>"; };
 		A043595D2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPagesBackground.swift; sourceTree = "<group>"; };
 		A054DD472B022F89009E9EA7 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		A054DD492B0233A2009E9EA7 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
-		A05665FF2AFD0FB800904913 /* appetite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = appetite.ttf; sourceTree = "<group>"; };
 		A05666022AFD103700904913 /* CourseOfMentalDisease-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CourseOfMentalDisease-Info.plist"; sourceTree = "<group>"; };
-		A05EAD462D620E5B00F2BFE8 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD482D620E8000F2BFE8 /* ProfileSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionViewModel.swift; sourceTree = "<group>"; };
-		A05EAD4A2D620EA200F2BFE8 /* MainPageViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD4C2D620EB500F2BFE8 /* LogInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD4E2D620EC900F2BFE8 /* SignUpViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD502D620ED700F2BFE8 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD522D620EF100F2BFE8 /* SomaticSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticSectionViewModel.swift; sourceTree = "<group>"; };
-		A05EAD542D620F0600F2BFE8 /* SomaticViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD562D620F2200F2BFE8 /* EmotionsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsSectionViewModel.swift; sourceTree = "<group>"; };
-		A05EAD582D620F2F00F2BFE8 /* EmotionsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsViewViewModel.swift; sourceTree = "<group>"; };
-		A05EAD5A2D62109400F2BFE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A05EAD722D629F6500F2BFE8 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 		A05EAD782D62A12B00F2BFE8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A062169D2AFC2D5A005EDB5A /* CourseOfMentalDisease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseOfMentalDisease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06216A02AFC2D5A005EDB5A /* CourseOfMentalDiseaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseOfMentalDiseaseApp.swift; sourceTree = "<group>"; };
-		A06216A22AFC2D5A005EDB5A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A06216A42AFC2D5B005EDB5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A06216AE2AFC2DAA005EDB5A /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
-		A06216B02AFC3899005EDB5A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		A06AA4C82D9DAF1700FF40A3 /* SomaticRecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticRecordsListView.swift; sourceTree = "<group>"; };
-		A06AA4CA2D9DAFC200FF40A3 /* SomaticRecordsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticRecordsListViewModel.swift; sourceTree = "<group>"; };
+		A08D99982DB10B780072CD29 /* SomaticAverges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticAverges.swift; sourceTree = "<group>"; };
 		A090A5832D6C1123006DD458 /* CourseOfMentalDisease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CourseOfMentalDisease.entitlements; sourceTree = "<group>"; };
-		A0AF97662DAC2C8C00F9423B /* LoadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadScreen.swift; sourceTree = "<group>"; };
 		A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		A0C76EC72B06BC210082B49D /* ProfilePictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictures.swift; sourceTree = "<group>"; };
-		A0DDB6B62B01143E004F87A4 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		A0E404EA2AFD78E500564519 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0EFD28A2DADBE3000FE8CC8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		A0EFD28C2DADC02600FE8CC8 /* TabViewTeest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewTeest.swift; sourceTree = "<group>"; };
-		A0F6BF692B38E2810049DEF0 /* SomaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticView.swift; sourceTree = "<group>"; };
-		A0F6BF6B2B38E3410049DEF0 /* EmotionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsSection.swift; sourceTree = "<group>"; };
-		A0F6BF6D2B38E3520049DEF0 /* EmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsView.swift; sourceTree = "<group>"; };
-		A0FB0A8B2B01718300BE39BE /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		A0FB0A8D2B01719300BE39BE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppearModifier.swift; sourceTree = "<group>"; };
+		A0F528D52DB3081700F0E5C1 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A08D997B2DB032F00072CD29 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
+		A08D99A92DB116FD0072CD29 /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
+		A0F528D22DB2A28200F0E5C1 /* DI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DI; sourceTree = "<group>"; };
+		A0F528D72DB30AA800F0E5C1 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A062169A2AFC2D5A005EDB5A /* Frameworks */ = {
@@ -124,6 +80,7 @@
 			files = (
 				A05EAD6D2D629F2A00F2BFE8 /* Realtime in Frameworks */,
 				A05EAD6B2D629F2A00F2BFE8 /* PostgREST in Frameworks */,
+				A0F528D12DB2A26E00F0E5C1 /* Factory in Frameworks */,
 				A05EAD692D629F2A00F2BFE8 /* Functions in Frameworks */,
 				A05EAD6F2D629F2A00F2BFE8 /* Storage in Frameworks */,
 				A05EAD712D629F2A00F2BFE8 /* Supabase in Frameworks */,
@@ -146,6 +103,7 @@
 			children = (
 				A054DD472B022F89009E9EA7 /* CustomTextFields.swift */,
 				A054DD492B0233A2009E9EA7 /* CustomButtons.swift */,
+				A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -156,12 +114,11 @@
 				A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */,
 				A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */,
 				A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */,
-				A05665FF2AFD0FB800904913 /* appetite.ttf */,
 			);
 			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
-		A05666072AFD134B00904913 /* Elements */ = {
+		A05666072AFD134B00904913 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				A03A764D2AFF95B300A312A8 /* ImagePicker.swift */,
@@ -169,50 +126,9 @@
 				A0C76EC72B06BC210082B49D /* ProfilePictures.swift */,
 				A02322BC2D97294D004C1CB3 /* CustomGauge.swift */,
 				A039A7662D9AF3610091F69F /* CustomPicker.swift */,
-			);
-			path = Elements;
-			sourceTree = "<group>";
-		};
-		A05EAD412D62068C00F2BFE8 /* VIews */ = {
-			isa = PBXGroup;
-			children = (
-				A06216A22AFC2D5A005EDB5A /* MainView.swift */,
-				A0AF97662DAC2C8C00F9423B /* LoadScreen.swift */,
-				A0FB0A8B2B01718300BE39BE /* LogInView.swift */,
-				A0FB0A8D2B01719300BE39BE /* SignUpView.swift */,
-				A0DDB6B62B01143E004F87A4 /* MainPageView.swift */,
-				A06216AE2AFC2DAA005EDB5A /* ProfileSection.swift */,
-				A06216B02AFC3899005EDB5A /* ProfileView.swift */,
-				A040DA3F2B0907CC00CEBA8B /* SomaticSection.swift */,
-				A0F6BF692B38E2810049DEF0 /* SomaticView.swift */,
-				A039A7622D9AE39C0091F69F /* SomaticNewRecord.swift */,
-				A06AA4C82D9DAF1700FF40A3 /* SomaticRecordsListView.swift */,
-				A0F6BF6B2B38E3410049DEF0 /* EmotionsSection.swift */,
-				A0F6BF6D2B38E3520049DEF0 /* EmotionsView.swift */,
-				A05666072AFD134B00904913 /* Elements */,
 				A054DD462B022F5F009E9EA7 /* Modifiers */,
-				A0EFD28C2DADC02600FE8CC8 /* TabViewTeest.swift */,
 			);
-			path = VIews;
-			sourceTree = "<group>";
-		};
-		A05EAD432D6206A100F2BFE8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				A05EAD462D620E5B00F2BFE8 /* MainViewViewModel.swift */,
-				A05EAD4C2D620EB500F2BFE8 /* LogInViewViewModel.swift */,
-				A05EAD4E2D620EC900F2BFE8 /* SignUpViewViewModel.swift */,
-				A05EAD4A2D620EA200F2BFE8 /* MainPageViewViewModel.swift */,
-				A05EAD482D620E8000F2BFE8 /* ProfileSectionViewModel.swift */,
-				A05EAD502D620ED700F2BFE8 /* ProfileViewViewModel.swift */,
-				A05EAD522D620EF100F2BFE8 /* SomaticSectionViewModel.swift */,
-				A05EAD542D620F0600F2BFE8 /* SomaticViewViewModel.swift */,
-				A039A7642D9AE4680091F69F /* SomaticNewRecordViewModel.swift */,
-				A06AA4CA2D9DAFC200FF40A3 /* SomaticRecordsListViewModel.swift */,
-				A05EAD562D620F2200F2BFE8 /* EmotionsSectionViewModel.swift */,
-				A05EAD582D620F2F00F2BFE8 /* EmotionsViewViewModel.swift */,
-			);
-			path = ViewModels;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A05EAD442D6206AC00F2BFE8 /* Models */ = {
@@ -221,6 +137,8 @@
 				A05EAD782D62A12B00F2BFE8 /* Profile.swift */,
 				A039A76C2D9B3ACB0091F69F /* Rates.swift */,
 				A039A76E2D9B49390091F69F /* Somatics.swift */,
+				A08D99982DB10B780072CD29 /* SomaticAverges.swift */,
+				A0F528D52DB3081700F0E5C1 /* DateRange.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,8 +150,6 @@
 				A06216A42AFC2D5B005EDB5A /* Assets.xcassets */,
 				A0E404EA2AFD78E500564519 /* Extensions.swift */,
 				A05665FD2AFD0F7400904913 /* Custom Fonts */,
-				A05EAD5A2D62109400F2BFE8 /* GoogleService-Info.plist */,
-				A05EAD722D629F6500F2BFE8 /* Supabase.swift */,
 				A02322BE2D973FCA004C1CB3 /* Colors.xcassets */,
 				A0EFD28A2DADBE3000FE8CC8 /* Launch Screen.storyboard */,
 			);
@@ -262,9 +178,12 @@
 			isa = PBXGroup;
 			children = (
 				A05EAD452D6206CE00F2BFE8 /* Other */,
+				A0F528D72DB30AA800F0E5C1 /* Features */,
 				A05EAD442D6206AC00F2BFE8 /* Models */,
-				A05EAD432D6206A100F2BFE8 /* ViewModels */,
-				A05EAD412D62068C00F2BFE8 /* VIews */,
+				A08D997B2DB032F00072CD29 /* Services */,
+				A0F528D22DB2A28200F0E5C1 /* DI */,
+				A08D99A92DB116FD0072CD29 /* Networking */,
+				A05666072AFD134B00904913 /* Components */,
 				A040DA3E2B09078000CEBA8B /* Graphics */,
 				A06216A62AFC2D5B005EDB5A /* Preview Content */,
 			);
@@ -293,6 +212,12 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A08D997B2DB032F00072CD29 /* Services */,
+				A08D99A92DB116FD0072CD29 /* Networking */,
+				A0F528D22DB2A28200F0E5C1 /* DI */,
+				A0F528D72DB30AA800F0E5C1 /* Features */,
 			);
 			name = CourseOfMentalDisease;
 			productName = "Course of Mental Disease";
@@ -326,6 +251,7 @@
 			mainGroup = A06216942AFC2D5A005EDB5A;
 			packageReferences = (
 				A05EAD652D629F2A00F2BFE8 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = A062169E2AFC2D5A005EDB5A /* Products */;
 			projectDirPath = "";
@@ -341,9 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05666012AFD0FB800904913 /* appetite.ttf in Resources */,
 				A06216A82AFC2D5B005EDB5A /* Preview Assets.xcassets in Resources */,
-				A05EAD5B2D62109400F2BFE8 /* GoogleService-Info.plist in Resources */,
 				A0EFD28B2DADBE3000FE8CC8 /* Launch Screen.storyboard in Resources */,
 				A0AF97822DAC470D00F9423B /* Comfortaa-Light.ttf in Resources */,
 				A0AF97832DAC470D00F9423B /* Comfortaa-Bold.ttf in Resources */,
@@ -361,44 +285,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C76EC82B06BC210082B49D /* ProfilePictures.swift in Sources */,
-				A06216A32AFC2D5A005EDB5A /* MainView.swift in Sources */,
 				A054DD4A2B0233A2009E9EA7 /* CustomButtons.swift in Sources */,
+				A0F528D42DB2D08100F0E5C1 /* OnFirstAppearModifier.swift in Sources */,
+				A0F528D62DB3081700F0E5C1 /* DateRange.swift in Sources */,
 				A039A76D2D9B3ACB0091F69F /* Rates.swift in Sources */,
-				A039A7632D9AE39C0091F69F /* SomaticNewRecord.swift in Sources */,
-				A06AA4C92D9DAF1700FF40A3 /* SomaticRecordsListView.swift in Sources */,
-				A0F6BF6E2B38E3520049DEF0 /* EmotionsView.swift in Sources */,
-				A0AF97672DAC2C8C00F9423B /* LoadScreen.swift in Sources */,
-				A0DDB6B72B01143E004F87A4 /* MainPageView.swift in Sources */,
 				A03A764E2AFF95B300A312A8 /* ImagePicker.swift in Sources */,
 				A039A7672D9AF3610091F69F /* CustomPicker.swift in Sources */,
-				A05EAD512D620ED800F2BFE8 /* ProfileViewViewModel.swift in Sources */,
-				A05EAD492D620E8000F2BFE8 /* ProfileSectionViewModel.swift in Sources */,
-				A0FB0A8C2B01718300BE39BE /* LogInView.swift in Sources */,
-				A0FB0A8E2B01719300BE39BE /* SignUpView.swift in Sources */,
 				A06216A12AFC2D5A005EDB5A /* CourseOfMentalDiseaseApp.swift in Sources */,
-				A05EAD572D620F2200F2BFE8 /* EmotionsSectionViewModel.swift in Sources */,
-				A0F6BF6C2B38E3410049DEF0 /* EmotionsSection.swift in Sources */,
-				A0EFD28D2DADC02600FE8CC8 /* TabViewTeest.swift in Sources */,
-				A05EAD4D2D620EB500F2BFE8 /* LogInViewViewModel.swift in Sources */,
-				A0F6BF6A2B38E2810049DEF0 /* SomaticView.swift in Sources */,
-				A06AA4CB2D9DAFC200FF40A3 /* SomaticRecordsListViewModel.swift in Sources */,
-				A05EAD4B2D620EA200F2BFE8 /* MainPageViewViewModel.swift in Sources */,
-				A06216B12AFC3899005EDB5A /* ProfileView.swift in Sources */,
-				A05EAD592D620F2F00F2BFE8 /* EmotionsViewViewModel.swift in Sources */,
-				A06216AF2AFC2DAA005EDB5A /* ProfileSection.swift in Sources */,
-				A05EAD4F2D620EC900F2BFE8 /* SignUpViewViewModel.swift in Sources */,
+				A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */,
 				A0E404EB2AFD78E500564519 /* Extensions.swift in Sources */,
 				A043595E2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift in Sources */,
-				A040DA402B0907CC00CEBA8B /* SomaticSection.swift in Sources */,
-				A05EAD732D629F6500F2BFE8 /* Supabase.swift in Sources */,
 				A02322BD2D97294D004C1CB3 /* CustomGauge.swift in Sources */,
-				A05EAD472D620E5B00F2BFE8 /* MainViewViewModel.swift in Sources */,
 				A054DD482B022F89009E9EA7 /* CustomTextFields.swift in Sources */,
 				A05EAD792D62A12B00F2BFE8 /* Profile.swift in Sources */,
-				A05EAD552D620F0600F2BFE8 /* SomaticViewViewModel.swift in Sources */,
 				A039A76F2D9B49390091F69F /* Somatics.swift in Sources */,
-				A05EAD532D620EF100F2BFE8 /* SomaticSectionViewModel.swift in Sources */,
-				A039A7652D9AE4680091F69F /* SomaticNewRecordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +524,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -656,6 +564,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A05EAD652D629F2A00F2BFE8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		A0F528D02DB2A26E00F0E5C1 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
