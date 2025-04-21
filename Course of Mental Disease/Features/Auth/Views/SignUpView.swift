@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import PopupView
 
 struct SignUpView: View {
     
@@ -15,6 +16,8 @@ struct SignUpView: View {
     @State private var albumShowSheet = false
     @State private var cameraShowSheet = false
     @State private var isPhotoPicker = false
+    @State private var showError = false
+    @State private var showPopover = false
     
     var body: some View {
         NavigationView {
@@ -25,55 +28,13 @@ struct SignUpView: View {
                 
                 VStack(alignment: .center, spacing: 10) {
                     
-                    //PhotoPicker
-                    if let image = viewModel.image {
-                        SignUpPFP(image: image)
-                            .onTapGesture {
-                                isPhotoPicker = true
-                            }
-                            .confirmationDialog("Select your profile Picture", isPresented: $isPhotoPicker) {
-                                Button {
-                                    cameraShowSheet = true
-                                } label: {
-                                    Label("Take a photo", systemImage: "questionmark.circle")
-                                }
-                                
-                                Button {
-                                    albumShowSheet = true
-                                } label: {
-                                    Label("Select from library", systemImage: "questionmark.circle")
-                                }
-                            }
-                        
-                    } else {
-                        DefaultSignUpPFP()
-                            .onTapGesture {
-                                isPhotoPicker = true
-                            }
-                            .confirmationDialog("Select your profile Picture", isPresented: $isPhotoPicker) {
-                                Button {
-                                    cameraShowSheet = true
-                                } label: {
-                                    Label("Take a photo", systemImage: "questionmark.circle")
-                                }
-                                
-                                Button {
-                                    albumShowSheet = true
-                                } label: {
-                                    Label("Select from library", systemImage: "questionmark.circle")
-                                }
-                            }
-                        
-                    }
-                    
-                    //Form errors
-                    if let error = viewModel.errorMessage{
-                        Text(error)
-                            .frame(width: 250)
-                            .font(.custom("appetite", size: 12))
-                            .foregroundStyle(.pink.secondary)
-                        
-                    }
+                    //Avatar + PhotoPicker
+                    EditableAvatar(image: viewModel.image,
+                                   color: .odeToGreen,
+                                   diameter: 150,
+                                   albumShowSheet: $albumShowSheet,
+                                   cameraShowSheet: $cameraShowSheet,
+                                   isPhotoPicker: $isPhotoPicker)
                     
                     //SignUp Form
                     TextField("E-mail:", text: $viewModel.email)
@@ -88,14 +49,28 @@ struct SignUpView: View {
                         .frame(width: 250)
                         .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                         .disableAutocorrection(true)
-                        .textContentType(.name)
+                        .keyboardType(.default)
+                        .textContentType(.givenName)
                     
-                    SecureField("Пароль:", text: $viewModel.password)
-                        .frame(width: 250)
-                        .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                        .textContentType(.password)
+                    HStack {
+                        SecureField("Пароль:", text: $viewModel.password)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .textContentType(.password)
+                        Image(systemName: "info.circle")
+                            .onTapGesture {
+                                showPopover.toggle()
+                            }
+                    }
+                    .popover(isPresented: $showPopover) {
+                        Text("Пароль должен состоять не менее чем из 6 символов и содержать заглавные и строчные буквы, а также как минимум одну цифру и спецсимвол")
+                            .padding(3)
+                            .font(.custom("Comfortaa-Bold", size: 12))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .presentationCompactAdaptation(.popover)
+                    }
+                    .frame(width: 250)
+                    .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                     
                     //Sign up button
                     if (viewModel.password == "") || (viewModel.name == "") || (viewModel.email == "") {
@@ -142,6 +117,10 @@ struct SignUpView: View {
             }
         }
         .tint(.deadSea)
+        .onReceive(viewModel.$errorMessage.compactMap { $0 }) { _ in
+            showError = true
+        }
+        .modifier(errorFloater(showError: $showError, errorMessage: $viewModel.errorMessage))
         
     }
 }

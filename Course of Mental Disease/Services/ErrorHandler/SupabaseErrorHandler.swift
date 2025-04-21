@@ -11,12 +11,19 @@ import Supabase
 final class SupabaseErrorHandler: ErrorHandlerProtocol {
     
     func errorMessage(for error: Error) -> String? {
-        if let validationError = error as? AppValidationError {
-            return validationError.localizedDescription
-        }
-        if let authError = error as? AuthError,
-           authError.errorCode.rawValue == "invalid_credentials" {
-            return "Неверное имя пользователя или пароль"
+        if let authError = error as? AuthError {
+            switch authError.errorCode.rawValue {
+                        case "invalid_login", "invalid_credentials":
+                            return "Неверный email или пароль"
+                        case "user_already_exists":
+                            return "Пользователь с таким email уже существует"
+                        case "validation_failed":
+                            return "Неверный формат email"
+                        case "weak_password":
+                            return "Пароль слишком простой"
+                        default:
+                            return authError.message
+                        }
         }
         if let dbError = error as? PostgrestError,
            dbError.code == "23505" {

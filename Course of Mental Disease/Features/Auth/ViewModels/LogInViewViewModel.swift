@@ -18,10 +18,9 @@ final class LogInViewViewModel: ObservableObject {
     @Injected(\.errorHandler) private var errorHandler
     
     func logIn() {
-        errorMessage = nil
+        guard errorMessage == nil else { return }
         Task {
             do{
-                try validate()
                 try await authService.signIn(email: email, password: password)
             } catch {
                 errorHandler.handle(error)
@@ -29,15 +28,4 @@ final class LogInViewViewModel: ObservableObject {
             }
         }
     }
-    
-    private func validate() throws {
-        guard ValidationService.validateNotEmpty(email),
-              ValidationService.validateNotEmpty(password) else {
-            throw AppValidationError.emptyFields
-        }
-        guard ValidationService.validateEmail(email) else {
-            throw AppValidationError.invalidEmail
-        }
-    }
-    
 }

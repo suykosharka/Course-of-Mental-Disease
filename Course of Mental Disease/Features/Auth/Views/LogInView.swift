@@ -1,15 +1,17 @@
 //
-//  LogInPage.swift
+//  LogInView.swift
 //  CourseOfMentalDisease
 //
 //  Created by Илья Паршин on 12.11.2023.
 //
 
 import SwiftUI
+import PopupView
 
 struct LogInView: View {
     
     @StateObject var viewModel = LogInViewViewModel()
+    @State private var showError = false
     
     var body: some View {
         NavigationView {
@@ -19,16 +21,6 @@ struct LogInView: View {
                 AuthorizationPagesBackground()
                 
                 VStack(alignment: .center, spacing: 10) {
-                    
-                    //LogIn errors
-                    
-                    if let error = viewModel.errorMessage{
-                        Text(error)
-                            .frame(width: 250)
-                            .font(.custom("appetite", size: 12))
-                            .foregroundStyle(.pink.secondary)
-                        
-                    }
                     
                     //LogIn Form
                     TextField("E-mail:", text: $viewModel.email)
@@ -78,7 +70,10 @@ struct LogInView: View {
             }
         }
         .tint(.deadSea)
-        
+        .onReceive(viewModel.$errorMessage.compactMap { $0 }) { _ in
+            showError = true
+        }
+        .modifier(errorFloater(showError: $showError, errorMessage: $viewModel.errorMessage))
     }
 }
 

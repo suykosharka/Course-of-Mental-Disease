@@ -22,10 +22,9 @@ final class SignUpViewViewModel: ObservableObject {
     @Injected(\.errorHandler) private var errorHandler
     
     func signUp() {
-        errorMessage = nil
+        guard errorMessage == nil else { return }
         Task {
             do {
-                try validate()
                 let imageURL = try await storageService.uploadImage(image)
                 try await authService.signUp(name: name, email: email, password: password, avatarURL: imageURL)
             } catch {
@@ -34,19 +33,4 @@ final class SignUpViewViewModel: ObservableObject {
             }
         }
     }
-    
-    private func validate() throws {
-        guard ValidationService.validateNotEmpty(name),
-              ValidationService.validateNotEmpty(email),
-              ValidationService.validateNotEmpty(password) else {
-            throw AppValidationError.emptyFields
-        }
-        guard ValidationService.validateEmail(email) else {
-            throw AppValidationError.invalidEmail
-        }
-        guard ValidationService.validatePassword(password) else {
-            throw AppValidationError.weakPassword
-        }
-    }
-
 }

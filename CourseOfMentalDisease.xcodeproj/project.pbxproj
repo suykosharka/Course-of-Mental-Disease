@@ -27,10 +27,12 @@
 		A06216A52AFC2D5B005EDB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06216A42AFC2D5B005EDB5A /* Assets.xcassets */; };
 		A06216A82AFC2D5B005EDB5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */; };
 		A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D99982DB10B780072CD29 /* SomaticAverges.swift */; };
+		A09617552DB5102B00D289CB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = A09617542DB5102B00D289CB /* PopupView */; };
+		A09617572DB5AE1500D289CB /* ErrorFloater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09617562DB5AE1500D289CB /* ErrorFloater.swift */; };
 		A0AF97822DAC470D00F9423B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */; };
 		A0AF97832DAC470D00F9423B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */; };
 		A0AF97842DAC470D00F9423B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */; };
-		A0C76EC82B06BC210082B49D /* ProfilePictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C76EC72B06BC210082B49D /* ProfilePictures.swift */; };
+		A0C76EC82B06BC210082B49D /* Avatars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C76EC72B06BC210082B49D /* Avatars.swift */; };
 		A0E404EB2AFD78E500564519 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E404EA2AFD78E500564519 /* Extensions.swift */; };
 		A0EFD28B2DADBE3000FE8CC8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0EFD28A2DADBE3000FE8CC8 /* Launch Screen.storyboard */; };
 		A0F528D12DB2A26E00F0E5C1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A0F528D02DB2A26E00F0E5C1 /* Factory */; };
@@ -56,10 +58,11 @@
 		A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A08D99982DB10B780072CD29 /* SomaticAverges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticAverges.swift; sourceTree = "<group>"; };
 		A090A5832D6C1123006DD458 /* CourseOfMentalDisease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CourseOfMentalDisease.entitlements; sourceTree = "<group>"; };
+		A09617562DB5AE1500D289CB /* ErrorFloater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFloater.swift; sourceTree = "<group>"; };
 		A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
-		A0C76EC72B06BC210082B49D /* ProfilePictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictures.swift; sourceTree = "<group>"; };
+		A0C76EC72B06BC210082B49D /* Avatars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatars.swift; sourceTree = "<group>"; };
 		A0E404EA2AFD78E500564519 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0EFD28A2DADBE3000FE8CC8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppearModifier.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09617552DB5102B00D289CB /* PopupView in Frameworks */,
 				A05EAD6D2D629F2A00F2BFE8 /* Realtime in Frameworks */,
 				A05EAD6B2D629F2A00F2BFE8 /* PostgREST in Frameworks */,
 				A0F528D12DB2A26E00F0E5C1 /* Factory in Frameworks */,
@@ -104,6 +108,7 @@
 				A054DD472B022F89009E9EA7 /* CustomTextFields.swift */,
 				A054DD492B0233A2009E9EA7 /* CustomButtons.swift */,
 				A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */,
+				A09617562DB5AE1500D289CB /* ErrorFloater.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -123,7 +128,7 @@
 			children = (
 				A03A764D2AFF95B300A312A8 /* ImagePicker.swift */,
 				A043595D2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift */,
-				A0C76EC72B06BC210082B49D /* ProfilePictures.swift */,
+				A0C76EC72B06BC210082B49D /* Avatars.swift */,
 				A02322BC2D97294D004C1CB3 /* CustomGauge.swift */,
 				A039A7662D9AF3610091F69F /* CustomPicker.swift */,
 				A054DD462B022F5F009E9EA7 /* Modifiers */,
@@ -252,6 +257,7 @@
 			packageReferences = (
 				A05EAD652D629F2A00F2BFE8 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */,
+				A09617532DB5102B00D289CB /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = A062169E2AFC2D5A005EDB5A /* Products */;
 			projectDirPath = "";
@@ -284,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C76EC82B06BC210082B49D /* ProfilePictures.swift in Sources */,
+				A0C76EC82B06BC210082B49D /* Avatars.swift in Sources */,
 				A054DD4A2B0233A2009E9EA7 /* CustomButtons.swift in Sources */,
 				A0F528D42DB2D08100F0E5C1 /* OnFirstAppearModifier.swift in Sources */,
 				A0F528D62DB3081700F0E5C1 /* DateRange.swift in Sources */,
@@ -295,6 +301,7 @@
 				A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */,
 				A0E404EB2AFD78E500564519 /* Extensions.swift in Sources */,
 				A043595E2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift in Sources */,
+				A09617572DB5AE1500D289CB /* ErrorFloater.swift in Sources */,
 				A02322BD2D97294D004C1CB3 /* CustomGauge.swift in Sources */,
 				A054DD482B022F89009E9EA7 /* CustomTextFields.swift in Sources */,
 				A05EAD792D62A12B00F2BFE8 /* Profile.swift in Sources */,
@@ -524,6 +531,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		A09617532DB5102B00D289CB /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.7;
+			};
+		};
 		A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory";
@@ -564,6 +579,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A05EAD652D629F2A00F2BFE8 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		A09617542DB5102B00D289CB /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A09617532DB5102B00D289CB /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 		A0F528D02DB2A26E00F0E5C1 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -26,11 +26,7 @@ struct ProfileView: View {
                     VStack {
                         
                         //Avatar
-                        if let image = viewModel.image {
-                            PFP(image: image)
-                        } else {
-                            DefaultPFP()
-                        }
+                        Avatar(image: viewModel.image, color: .highPlateau, diameter: 125)
                         
                         //User Info
                         Text(viewModel.name)

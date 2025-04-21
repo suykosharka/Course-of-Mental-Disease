@@ -30,11 +30,7 @@ struct ProfileSection: View {
                 HStack(alignment: .center) {
                     
                     //Avatar
-                    if let image = viewModel.image {
-                        PFP(image: image)
-                    } else {
-                        DefaultPFP()
-                    }
+                    Avatar(image: viewModel.image, color: .highPlateau, diameter: 125)
                     
                     //Profile Info
                     VStack (alignment: .center, spacing: 15){
