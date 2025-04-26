@@ -21,16 +21,14 @@ final class SignUpViewViewModel: ObservableObject {
     @Injected(\.storageService) private var storageService
     @Injected(\.errorHandler) private var errorHandler
     
-    func signUp() {
+    func signUp() async {
         guard errorMessage == nil else { return }
-        Task {
-            do {
-                let imageURL = try await storageService.uploadImage(image)
-                try await authService.signUp(name: name, email: email, password: password, avatarURL: imageURL)
-            } catch {
-                errorHandler.handle(error)
-                await MainActor.run { errorMessage = errorHandler.errorMessage(for: error) }
-            }
+        do {
+            let imageURL = try await storageService.uploadImage(image)
+            try await authService.signUp(name: name, email: email, password: password, avatarURL: imageURL)
+        } catch {
+            errorHandler.handle(error)
+            await MainActor.run { errorMessage = errorHandler.errorMessage(for: error) }
         }
     }
 }

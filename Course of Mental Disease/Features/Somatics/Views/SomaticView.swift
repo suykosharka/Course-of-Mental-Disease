@@ -20,155 +20,122 @@ struct SomaticView: View {
             Rectangle()
                 .foregroundColor(.sugarMilk)
                 .ignoresSafeArea()
-
-            if viewModel.isLoading {
-                ProgressView()
-            } else {
-                VStack {
-                    
-                    //Range picker
-                    Menu {
-                        Picker("", selection: $viewModel.range,
-                               content: {
-                            ForEach(DateRangeType.allCases) { data in
-                                Text(data.rawValue).tag(data)
-                            }
-                        })
-        
-                    }
-                    label: {
-                        HStack() {
-                            Text(viewModel.range.rawValue)
-                            Image(systemName: "chevron.down")
+            
+            VStack {
+                
+                //Range picker
+                Menu {
+                    Picker("", selection: $viewModel.range,
+                           content: {
+                        ForEach(DateRangeType.allCases) { data in
+                            Text(data.rawValue).tag(data)
                         }
-                        .font(.custom("Comfortaa-Bold", size: 15))
+                    })
+    
+                }
+                label: {
+                    HStack() {
+                        Text(viewModel.range.rawValue)
+                        Image(systemName: "chevron.down")
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
-                    .padding(.bottom, 10)
+                    .font(.custom("Comfortaa-Bold", size: 15))
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading)
+                .padding(.bottom, 10)
 
-                    //Custom range datepickers
-                    if viewModel.range == .customRange {
-                        VStack (alignment: .leading) {
+                //Custom range datepickers
+                if viewModel.range == .customRange {
+                    VStack (alignment: .leading) {
+                        
+                        //Start date
+                        DatePicker(selection: $viewModel.startDate,
+                                   in: ...viewModel.endDate,
+                                   displayedComponents: .date,
+                                   label: {
+                            Text("С")
+                        }
+                        )
+                        .frame(width: 200, height: 15)
+                        .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                        
+                        HStack() {
                             
-                            //Start date
-                            DatePicker(selection: $viewModel.startDate,
-                                       in: ...viewModel.endDate,
-                                       displayedComponents: .date,
-                                       label: {
-                                Text("С")
-                            }
+                            //End date
+                            DatePicker(selection: $viewModel.endDate,
+                                       in: viewModel.startDate...Date(),
+                                    displayedComponents: .date,
+                                    label: {
+                                        Text("По")
+                                    }
                             )
-                            .frame(width: 150, height: 0)
+                            .frame(width: 200, height: 15)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
                             
-                            HStack() {
-                                
-                                //End date
-                                DatePicker(selection: $viewModel.endDate,
-                                           in: viewModel.startDate...Date(),
-                                        displayedComponents: .date,
-                                        label: {
-                                            Text("По")
-                                        }
-                                )
-                                .frame(width: 150, height: 0)
-                                .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
-                                
-                                //Show button
-                                
-                                Button {
-                                    //Update gauges
-                                    Task {
-                                        await viewModel.getSomaticAvgs()
-                                    }
-                                } label: {
-                                    Text("Показать")
-                                        .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
+                            //Show button
+                            
+                            Button {
+                                //Update gauges
+                                Task {
+                                    await viewModel.getSomaticAvgs()
                                 }
-                                
+                            } label: {
+                                Text("Показать")
+                                    .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
                             }
+                            
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding(.trailing)
-                        .padding(.bottom, 30)
-                        
                     }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing)
+                    .padding(.bottom, 30)
                     
-                    if let apetite = viewModel.apetiteAverage,
-                        let sleep = viewModel.sleepAverage,
-                        let energy = viewModel.energyAverage,
-                        let libido = viewModel.libidoAverage {
-                        
-                        //Indicators
+                }
+                
+                if viewModel.isLoading {
+                    
+                    ProgressView()
+                        .frame(height: 350)
+                    
+                }else if let apetite = viewModel.apetiteAverage,
+                    let sleep = viewModel.sleepAverage,
+                    let energy = viewModel.energyAverage,
+                    let libido = viewModel.libidoAverage {
+                    
+                    //Indicators
+                    VStack {
+                        CustomGauge(imageName: "fork.knife", title: "Аппетит", value: apetite, tintColor: .muddyMauve)
+                        CustomGauge(imageName: "moon.zzz.fill", title: "Cон", value: sleep, tintColor: .muddyMauve)
+                        CustomGauge(imageName: "bolt.fill", title: "Энергичность", value: energy, tintColor: .muddyMauve)
+                        CustomGauge(imageName: "bed.double.fill", title: "Либидо", value: libido, tintColor: .muddyMauve)
+                    }
+                    .frame(height: 350)
+                    
+                } else {
+                    
+                    //Empty view
+                    ContentUnavailableView {
                         VStack {
-                            CustomGauge(imageName: "fork.knife", title: "Аппетит", value: apetite, tintColor: .muddyMauve)
-                            CustomGauge(imageName: "moon.zzz.fill", title: "Cон", value: sleep, tintColor: .muddyMauve)
-                            CustomGauge(imageName: "bolt.fill", title: "Энергичность", value: energy, tintColor: .muddyMauve)
-                            CustomGauge(imageName: "bed.double.fill", title: "Либидо", value: libido, tintColor: .muddyMauve)
+                            Image(systemName: "heart.text.clipboard")
+                                .font(.system(size: 50, weight: .bold))
+                                .foregroundStyle(.pink)
+                                .symbolRenderingMode(.hierarchical)
+                            Text("Нет данных за выбранный период")
+                                .font(.custom("Comfortaa-Bold", size: 20))
+                                .foregroundStyle(.gray)
                         }
-                        .frame(height: 350)
-                        .padding(.bottom, 30)
-                        
-                    } else {
-                        
-                        //Empty view
-                        ContentUnavailableView {
-                            VStack {
-                                Image(systemName: "heart.text.clipboard")
-                                    .font(.system(size: 50, weight: .bold))
-                                    .foregroundStyle(.pink)
-                                    .symbolRenderingMode(.hierarchical)
-                                Text("Нет данных за выбранный период")
-                                    .font(.custom("Comfortaa-Bold", size: 20))
-                                    .foregroundStyle(.gray)
-                            }
-                                
-                        } description: {
-                            Text("Сделайте новую запись или выберите другой временной период")
-                                .font(.custom("Comfortaa-Bold", size: 15))
-                                .frame(width: 150)
-                                .foregroundStyle(.tertiary)
-                        }
-                        .frame(height: 350)
-                        .padding(.bottom, 30)
-                        
+                            
+                    } description: {
+                        Text("Сделайте новую запись или выберите другой временной период")
+                            .font(.custom("Comfortaa-Bold", size: 15))
+                            .frame(width: 150)
+                            .foregroundStyle(.tertiary)
                     }
-                    
-                    //Adding data
-                    HStack (alignment: .center) {
-                        
-                        //New record button
-                        Button {
-                            showingPopover = true
-                        } label: {
-                            Text("Сделать \n запись")
-                                .frame(maxWidth: .infinity)
-                                .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
-                        }
-                        .popover(isPresented: $showingPopover) {
-                            SomaticNewRecord(presentMe: $showingPopover)
-                                .onDisappear {
-                                    Task {
-                                        await viewModel.getSomaticAvgs()
-                                    }
-                                }
-                        }
-                        
-                        //Edit button
-                        Button {
-                            //Edit action
-                        } label: {
-                            Text("Изменить \n запись")
-                                .frame(maxWidth: .infinity)
-                               .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
-                        }
-                        
-                    }
-                    .padding()
+                    .frame(height: 350)
                     
                 }
             }
+
         }
         .tint(.muddyMauve)
         .task(id: viewModel.range) {

@@ -80,7 +80,9 @@ struct SignUpView: View {
                         
                     }else {
                         Button {
-                            viewModel.signUp()
+                            Task {
+                                await viewModel.signUp()
+                            }
                         } label: {
                             Text("Создать")
                                 .modifier(buttonModifier(borderColor: .odeToGreen, textColor: .white, backgroundColor: .odeToGreen))
@@ -120,7 +122,7 @@ struct SignUpView: View {
         .onReceive(viewModel.$errorMessage.compactMap { $0 }) { _ in
             showError = true
         }
-        .modifier(errorFloater(showError: $showError, errorMessage: $viewModel.errorMessage))
+        .floater(isShowing: $showError, message: $viewModel.errorMessage, color: .pink)
         
     }
 }

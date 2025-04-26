@@ -7,33 +7,64 @@
 
 import SwiftUI
 
-struct SomaticFlowView: View {
-    @available(iOS 17.0, *)
-    var body: some View {
-            TabView {
-                
-                SomaticNewRecord(presentMe: .constant(true))
-                    .tabItem {
-                                        Label("Menu", systemImage: "plus")
-                                    }
-                
-                SomaticView()
-                    .tabItem {
-                        Text("Menu")
-                            .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
-                                    }
-                
-                SomaticRecordsListView()
-                    .tabItem {
-                                        Label("Menu", systemImage: "list.dash")
-                            .tint(Color.red)
-                                    }
-                    
+enum Tab {
+    case new
+    case indicators
+    case list
+}
 
+struct SomaticFlowView: View {
+    
+    init() {
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor.sugarMilk
+        
+        let font = UIFont(name: "Comfortaa-Bold", size: 12) ?? UIFont.systemFont(ofSize: 16)
+        tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
+            .font: font,
+            .foregroundColor: UIColor.gray
+        ]
+        tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [
+            .font: font,
+            .foregroundColor: UIColor.muddyMauve
+        ]
+            
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        
         }
-            .background(.clear)
-            .tint(.muddyMauve)
-            .foregroundStyle(.red)
+
+    @State private var selectedTab: Tab = .indicators
+    
+    var body: some View {
+        TabView(selection: $selectedTab){
+            
+            SomaticNewRecord()
+                .transition(.move(edge: .leading))
+                .tabItem {
+                    Label("Добавить", systemImage: "plus")
+                }
+                .tag(Tab.new)
+            
+            SomaticView()
+                .transition(.move(edge: .trailing))
+                .tabItem {
+                    Label("Индикаторы", systemImage: "slider.horizontal.3")
+                }
+                .tag(Tab.indicators)
+            
+            SomaticRecordsListView()
+                .transition(.opacity)
+                .tabItem {
+                    Label("Записи", systemImage: "list.dash")
+                }
+                .tag(Tab.list)
+        }
+        .onDisappear() {
+            selectedTab = .indicators
+        }
     }
 }
 

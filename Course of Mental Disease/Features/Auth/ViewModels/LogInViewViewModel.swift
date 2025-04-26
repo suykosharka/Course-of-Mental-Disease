@@ -17,15 +17,13 @@ final class LogInViewViewModel: ObservableObject {
     @Injected(\.authService) private var authService
     @Injected(\.errorHandler) private var errorHandler
     
-    func logIn() {
+    func logIn() async {
         guard errorMessage == nil else { return }
-        Task {
-            do{
-                try await authService.signIn(email: email, password: password)
-            } catch {
-                errorHandler.handle(error)
-                await MainActor.run { errorMessage = errorHandler.errorMessage(for: error) }
-            }
+        do{
+            try await authService.signIn(email: email, password: password)
+        } catch {
+            errorHandler.handle(error)
+            await MainActor.run { errorMessage = errorHandler.errorMessage(for: error) }
         }
     }
 }

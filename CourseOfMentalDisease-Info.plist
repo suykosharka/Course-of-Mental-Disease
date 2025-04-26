@@ -10,5 +10,9 @@
 		<string>Comfortaa-Regular.ttf</string>
 		<string>Comfortaa-Light.ttf</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>Приложению нужен доступ к камере</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Приложению нужен доступ к фото</string>
 </dict>
 </plist>

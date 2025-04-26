@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Somatics: Decodable, Encodable {
+struct Somatics: Decodable, Encodable, Hashable {
     
     let profile_id: String
     let date: String

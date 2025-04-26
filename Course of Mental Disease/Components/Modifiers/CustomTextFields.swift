@@ -27,3 +27,8 @@ struct textModifier: ViewModifier {
             .font(.custom("Comfortaa-Bold", size: 15))
     }
 }
+
+#Preview {
+    Text("qwertyuiopasdfghjklzxcvbnm,")
+        .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .black))
+}

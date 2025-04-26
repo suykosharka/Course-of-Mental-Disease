@@ -11,7 +11,7 @@ import Factory
 final class SomaticNewRecordViewModel: ObservableObject {
     
     @Published var errorMessage: String? = nil
-    @Published var showAlert: Bool = false
+    @Published var successMessage: String? = nil
     @Published var isUploaded: Bool = false
     @Published var apetiteValue: Rates.Apetite = .usual
     @Published var sleepValue: Rates.Sleep = .usual
@@ -23,24 +23,20 @@ final class SomaticNewRecordViewModel: ObservableObject {
     @Injected(\.authService) private var authService
     @Injected(\.errorHandler) private var errorHandler
     
-    func uploadNewRecord() {
-        Task {
-            do {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
-                let currentUserID = try await authService.getCurrentUserID()
-                let somatics = Somatics(profile_id: currentUserID, date: formatter.string(from: date),
-                                        apetiteRate: apetiteValue.rawValue, sleepRate: sleepValue.rawValue,
-                                        energyRate: energyValue.rawValue, libidoRate: libidoValue.rawValue)
-                try await somaticService.uploadSomatic(somatics)
-                await MainActor.run { self.isUploaded = true }                
-            } catch {
-                errorHandler.handle(error)
-                await MainActor.run {
-                    errorMessage = errorHandler.errorMessage(for: error)
-                    showAlert = true
-                }
-            }
+    func uploadNewRecord() async {
+        guard errorMessage == nil else { return }
+        do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            let currentUserID = try await authService.getCurrentUserID()
+            let somatics = Somatics(profile_id: currentUserID, date: formatter.string(from: date),
+                                    apetiteRate: apetiteValue.rawValue, sleepRate: sleepValue.rawValue,
+                                    energyRate: energyValue.rawValue, libidoRate: libidoValue.rawValue)
+            try await somaticService.uploadSomatic(somatics)
+            await MainActor.run { successMessage = "Запись создана!" }
+        } catch {
+            errorHandler.handle(error)
+            await MainActor.run { errorMessage = errorHandler.errorMessage(for: error) }
         }
     }
 }

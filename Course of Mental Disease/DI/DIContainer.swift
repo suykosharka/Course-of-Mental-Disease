@@ -11,19 +11,19 @@ import Factory
 extension Container {
 
     var authService: Factory<AuthServiceProtocol> {
-        self { SupabaseAuthService() }
+        self { SupabaseAuthService() }.shared
     }
     var storageService: Factory<StorageServiceProtocol> {
-        self { SupabaseStorageService() }
+        self { SupabaseStorageService() }.shared
     }
     var profileService: Factory<ProfileServiceProtocol> {
-        self { SupabaseProfileService() }
+        self { SupabaseProfileService() }.shared
     }
     var somaticService: Factory<SomaticServiceProtocol> {
-        self { SupabaseSomaticService() }
+        self { SupabaseSomaticService() }.shared
     }
     var errorHandler: Factory<ErrorHandlerProtocol> {
-        self { SupabaseErrorHandler() }
+        self { SupabaseErrorHandler() }.shared
     }
     
 }

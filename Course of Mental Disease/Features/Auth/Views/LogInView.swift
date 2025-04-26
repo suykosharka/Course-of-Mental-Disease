@@ -46,7 +46,9 @@ struct LogInView: View {
                                 .modifier(buttonModifier(borderColor: .gray, textColor: .white, backgroundColor: .gray))
                         }else {
                             Button {
-                                viewModel.logIn()
+                                Task {
+                                    await viewModel.logIn()
+                                }
                             } label: {
                                 Text("Войти")
                                     .modifier(buttonModifier(borderColor: .odeToGreen, textColor: .white, backgroundColor: .odeToGreen))
@@ -73,7 +75,8 @@ struct LogInView: View {
         .onReceive(viewModel.$errorMessage.compactMap { $0 }) { _ in
             showError = true
         }
-        .modifier(errorFloater(showError: $showError, errorMessage: $viewModel.errorMessage))
+        .floater(isShowing: $showError, message: $viewModel.errorMessage, color: .pink)
+        
     }
 }
 

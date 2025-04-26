@@ -27,3 +27,10 @@ struct buttonModifier: ViewModifier {
             .font(.custom("Comfortaa-Bold", size: 15))
     }
 }
+
+#Preview {
+        Button("qwertyuiopasdfghjklzxcvbnm,"){
+            
+        }
+        .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
+}

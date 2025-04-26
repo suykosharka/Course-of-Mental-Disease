@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SomaticNewRecord: View {
     
-    @Binding var presentMe: Bool
     @StateObject var viewModel = SomaticNewRecordViewModel()
+    @State private var showError = false
+    @State private var showSuccess = false
     
     var body: some View {
         
@@ -32,6 +33,8 @@ struct SomaticNewRecord: View {
                 )
                 .frame(width: 200, height: 0)
                 .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                
+                Spacer()
                 
                 CustomPicker(value: viewModel.apetiteValue.description, label: "Аппетит",
                              content: {
@@ -73,30 +76,31 @@ struct SomaticNewRecord: View {
                     })
                 })
                 
+                Spacer()
+                
                 Button {
-                    viewModel.uploadNewRecord()
+                    Task {
+                        await viewModel.uploadNewRecord()
+                    }
                 } label: {
                     Text("Сохранить запись")
                         .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
                 }
             }
-            .alert(Text("Запись с такой датой уже существует"),
-                   isPresented: $viewModel.showAlert,
-                    actions: {
-                        Button("ОК", role: .cancel) { }
-                    }, message: {
-                        Text("Выберите другую дату или удалите существующую запись.")
-                    }
-                )
         }
         .tint(.muddyMauve)
-        .onChange(of: viewModel.isUploaded) {
-            presentMe = false
+        .onReceive(viewModel.$successMessage.compactMap { $0 }) { _ in
+            showSuccess = true
         }
+        .onReceive(viewModel.$errorMessage.compactMap { $0 }) { _ in
+            showError = true
+        }
+        .floater(isShowing: $showError, message: $viewModel.errorMessage, color: .pink)
+        .floater(isShowing: $showSuccess, message: $viewModel.successMessage , color: .green)
         
     }
 }
 
 #Preview {
-    SomaticNewRecord(presentMe: .constant(true))
+    SomaticNewRecord()
 }

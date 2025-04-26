@@ -28,7 +28,8 @@
 		A06216A82AFC2D5B005EDB5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */; };
 		A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D99982DB10B780072CD29 /* SomaticAverges.swift */; };
 		A09617552DB5102B00D289CB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = A09617542DB5102B00D289CB /* PopupView */; };
-		A09617572DB5AE1500D289CB /* ErrorFloater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09617562DB5AE1500D289CB /* ErrorFloater.swift */; };
+		A09617572DB5AE1500D289CB /* Floater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09617562DB5AE1500D289CB /* Floater.swift */; };
+		A0A1B94C2DB93B2B000F050D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A0A1B94B2DB93B2B000F050D /* Factory */; };
 		A0AF97822DAC470D00F9423B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */; };
 		A0AF97832DAC470D00F9423B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */; };
 		A0AF97842DAC470D00F9423B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */; };
@@ -39,6 +40,16 @@
 		A0F528D42DB2D08100F0E5C1 /* OnFirstAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */; };
 		A0F528D62DB3081700F0E5C1 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F528D52DB3081700F0E5C1 /* DateRange.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0A1B9362DB93782000F050D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A06216952AFC2D5A005EDB5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A062169C2AFC2D5A005EDB5A;
+			remoteInfo = CourseOfMentalDisease;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A02322BC2D97294D004C1CB3 /* CustomGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGauge.swift; sourceTree = "<group>"; };
@@ -58,7 +69,8 @@
 		A06216A72AFC2D5B005EDB5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A08D99982DB10B780072CD29 /* SomaticAverges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomaticAverges.swift; sourceTree = "<group>"; };
 		A090A5832D6C1123006DD458 /* CourseOfMentalDisease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CourseOfMentalDisease.entitlements; sourceTree = "<group>"; };
-		A09617562DB5AE1500D289CB /* ErrorFloater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFloater.swift; sourceTree = "<group>"; };
+		A09617562DB5AE1500D289CB /* Floater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floater.swift; sourceTree = "<group>"; };
+		A0A1B9322DB93782000F050D /* CourseOfMentalDiseaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseOfMentalDiseaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AF977F2DAC470D00F9423B /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		A0AF97802DAC470D00F9423B /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		A0AF97812DAC470D00F9423B /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
@@ -72,6 +84,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A08D997B2DB032F00072CD29 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
 		A08D99A92DB116FD0072CD29 /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
+		A0A1B9332DB93782000F050D /* CourseOfMentalDiseaseTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CourseOfMentalDiseaseTests; sourceTree = "<group>"; };
 		A0F528D22DB2A28200F0E5C1 /* DI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DI; sourceTree = "<group>"; };
 		A0F528D72DB30AA800F0E5C1 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -92,6 +105,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0A1B92F2DB93782000F050D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A1B94C2DB93B2B000F050D /* Factory in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,7 +129,7 @@
 				A054DD472B022F89009E9EA7 /* CustomTextFields.swift */,
 				A054DD492B0233A2009E9EA7 /* CustomButtons.swift */,
 				A0F528D32DB2D08100F0E5C1 /* OnFirstAppearModifier.swift */,
-				A09617562DB5AE1500D289CB /* ErrorFloater.swift */,
+				A09617562DB5AE1500D289CB /* Floater.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -167,6 +188,8 @@
 				A090A5832D6C1123006DD458 /* CourseOfMentalDisease.entitlements */,
 				A05666022AFD103700904913 /* CourseOfMentalDisease-Info.plist */,
 				A062169F2AFC2D5A005EDB5A /* Course of Mental Disease */,
+				A0A1B9332DB93782000F050D /* CourseOfMentalDiseaseTests */,
+				A0A1B94A2DB93B2B000F050D /* Frameworks */,
 				A062169E2AFC2D5A005EDB5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				A062169D2AFC2D5A005EDB5A /* CourseOfMentalDisease.app */,
+				A0A1B9322DB93782000F050D /* CourseOfMentalDiseaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +227,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A0A1B94A2DB93B2B000F050D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +260,30 @@
 			productReference = A062169D2AFC2D5A005EDB5A /* CourseOfMentalDisease.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A0A1B9312DB93782000F050D /* CourseOfMentalDiseaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0A1B9382DB93782000F050D /* Build configuration list for PBXNativeTarget "CourseOfMentalDiseaseTests" */;
+			buildPhases = (
+				A0A1B92E2DB93782000F050D /* Sources */,
+				A0A1B92F2DB93782000F050D /* Frameworks */,
+				A0A1B9302DB93782000F050D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0A1B9372DB93782000F050D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A0A1B9332DB93782000F050D /* CourseOfMentalDiseaseTests */,
+			);
+			name = CourseOfMentalDiseaseTests;
+			packageProductDependencies = (
+				A0A1B94B2DB93B2B000F050D /* Factory */,
+			);
+			productName = CourseOfMentalDiseaseTests;
+			productReference = A0A1B9322DB93782000F050D /* CourseOfMentalDiseaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,11 +291,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					A062169C2AFC2D5A005EDB5A = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					A0A1B9312DB93782000F050D = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
+						TestTargetID = A062169C2AFC2D5A005EDB5A;
 					};
 				};
 			};
@@ -264,6 +324,7 @@
 			projectRoot = "";
 			targets = (
 				A062169C2AFC2D5A005EDB5A /* CourseOfMentalDisease */,
+				A0A1B9312DB93782000F050D /* CourseOfMentalDiseaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +341,13 @@
 				A0AF97842DAC470D00F9423B /* Comfortaa-Regular.ttf in Resources */,
 				A02322BF2D973FCA004C1CB3 /* Colors.xcassets in Resources */,
 				A06216A52AFC2D5B005EDB5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0A1B9302DB93782000F050D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +369,7 @@
 				A08D99992DB10B780072CD29 /* SomaticAverges.swift in Sources */,
 				A0E404EB2AFD78E500564519 /* Extensions.swift in Sources */,
 				A043595E2B0539B4001EBBA1 /* AuthorizationPagesBackground.swift in Sources */,
-				A09617572DB5AE1500D289CB /* ErrorFloater.swift in Sources */,
+				A09617572DB5AE1500D289CB /* Floater.swift in Sources */,
 				A02322BD2D97294D004C1CB3 /* CustomGauge.swift in Sources */,
 				A054DD482B022F89009E9EA7 /* CustomTextFields.swift in Sources */,
 				A05EAD792D62A12B00F2BFE8 /* Profile.swift in Sources */,
@@ -309,7 +377,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0A1B92E2DB93782000F050D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0A1B9372DB93782000F050D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A062169C2AFC2D5A005EDB5A /* CourseOfMentalDisease */;
+			targetProxy = A0A1B9362DB93782000F050D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A06216A92AFC2D5B005EDB5A /* Debug */ = {
@@ -460,9 +543,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.suykosharka.Course-of-Mental-Disease";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -493,9 +580,54 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.suykosharka.Course-of-Mental-Disease";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A0A1B9392DB93782000F050D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96WV5UW3Y7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.suykosharka.CourseOfMentalDiseaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CourseOfMentalDisease.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CourseOfMentalDisease";
+			};
+			name = Debug;
+		};
+		A0A1B93A2DB93782000F050D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96WV5UW3Y7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.suykosharka.CourseOfMentalDiseaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CourseOfMentalDisease.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CourseOfMentalDisease";
 			};
 			name = Release;
 		};
@@ -516,6 +648,15 @@
 			buildConfigurations = (
 				A06216AC2AFC2D5B005EDB5A /* Debug */,
 				A06216AD2AFC2D5B005EDB5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0A1B9382DB93782000F050D /* Build configuration list for PBXNativeTarget "CourseOfMentalDiseaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A1B9392DB93782000F050D /* Debug */,
+				A0A1B93A2DB93782000F050D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -584,6 +725,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A09617532DB5102B00D289CB /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		A0A1B94B2DB93B2B000F050D /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0F528CF2DB2A26E00F0E5C1 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		A0F528D02DB2A26E00F0E5C1 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

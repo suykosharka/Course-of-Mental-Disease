@@ -12,6 +12,16 @@ struct SectionsFlowView: View {
     
     @State var mainColor: Color?
     
+    init() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor.sugarMilk
+
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -30,26 +40,36 @@ struct SectionsFlowView: View {
                             .onAppear{
                                 mainColor = Color(.highPlateau)
                             }
+                            .navigationBarTitleDisplayMode(.inline)
+                            .toolbar {
+                                ToolbarItem(placement: .principal) {
+                                    VStack {
+                                        Text("Профиль")
+                                            .frame(height: 0)
+                                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
+                                    }
+                                }
+                            }
                     } label: {
                         ProfileSection()
                     }
                     
                     NavigationLink {
-                        SomaticView()
+                        SomaticFlowView()
                             .toolbarRole(.editor)
                             .onAppear{
                                 mainColor = Color(.muddyMauve)
                             }
                             .navigationBarTitleDisplayMode(.inline)
-                                    .toolbar {
-                                        ToolbarItem(placement: .principal) {
-                                            VStack {
-                                                Text("Соматические проявления")
-                                                    .frame(height: 0)
-                                                    .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
-                                            }
-                                        }
+                            .toolbar {
+                                ToolbarItem(placement: .principal) {
+                                    VStack {
+                                        Text("Соматические проявления")
+                                            .frame(height: 0)
+                                            .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
                                     }
+                                }
+                            }
                     } label: {
                         SomaticSection()
                     }

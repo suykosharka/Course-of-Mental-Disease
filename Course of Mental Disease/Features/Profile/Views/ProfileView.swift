@@ -34,30 +34,24 @@ struct ProfileView: View {
                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
                         
                         //Log Out Button
-                            Text("Log Out")
+                        Text("Log Out")
                             .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
-                                .onTapGesture {
-                                    viewModel.logOut()
-                                }
+                            .onTapGesture {
+                                viewModel.logOut()
+                            }
 
-                            Text("Delete")
+                        Text("Delete")
                             .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
+                        
+                        Button("Edit"){
+                            print("Edit")
+                        }
+                        .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
                         
                     }
                     .padding(15)
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal){
-                    Button("Edit"){
-                        print("Edit")
-                    }
-                    .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
-                }
-            }
-            .padding(-2)
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
         }
         .task {
             await viewModel.getInitialProfile()

@@ -9,11 +9,12 @@ import Foundation
 
 final class SupabaseSomaticService: SomaticServiceProtocol {
     
-    func uploadSomatic(_ record: Somatics) async throws {
-        try await supabase
-            .from("somatics")
-            .insert(record)
+    func fetchSomaticRecords(userID: String) async throws -> [Somatics] {
+        try await supabase.from("somatics")
+            .select()
+            .eq("profile_id", value: userID)
             .execute()
+            .value
     }
     
     func fetchSomaticAverages(userID: String, startDate: Date, endDate: Date) async throws -> SomaticAverages? {
@@ -30,6 +31,13 @@ final class SupabaseSomaticService: SomaticServiceProtocol {
             ).execute()
             .value
         return response.first
+    }
+    
+    func uploadSomatic(_ record: Somatics) async throws {
+        try await supabase
+            .from("somatics")
+            .insert(record)
+            .execute()
     }
     
 }

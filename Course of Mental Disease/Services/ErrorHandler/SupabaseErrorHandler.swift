@@ -29,6 +29,9 @@ final class SupabaseErrorHandler: ErrorHandlerProtocol {
            dbError.code == "23505" {
             return "Запись с такими данными уже существует"
         }
+        if (error as? URLError) != nil {
+            return "Нет подключения к интернету"
+        }
         return nil
     }
 
