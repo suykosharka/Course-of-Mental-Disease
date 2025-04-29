@@ -11,6 +11,7 @@ import SwiftData
 struct ProfileView: View {
 
     @StateObject var viewModel = ProfileViewViewModel()
+    @State var isEditable: Bool = false
     
     var body: some View {
         NavigationView {
@@ -21,39 +22,25 @@ struct ProfileView: View {
                     .foregroundColor(.sugarMilk)
                     .ignoresSafeArea()
 
-                ScrollView {
+                //ProfileView
+                VStack {
                     
-                    VStack {
+                    if !isEditable {
                         
-                        //Avatar
-                        Avatar(image: viewModel.image, color: .highPlateau, diameter: 125)
+                        NonEditableProfileView(isEditable: $isEditable, viewModel: viewModel)
                         
-                        //User Info
-                        Text(viewModel.name)
-                            .frame(width: 100, height: 0)
-                            .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
+                    } else {
                         
-                        //Log Out Button
-                        Text("Log Out")
-                            .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
-                            .onTapGesture {
-                                viewModel.logOut()
-                            }
-
-                        Text("Delete")
-                            .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
-                        
-                        Button("Edit"){
-                            print("Edit")
-                        }
-                        .modifier(buttonModifier(borderColor: .highPlateau, textColor: .white, backgroundColor: .highPlateau))
+                        EditableProfileView(isEditable: $isEditable, viewModel: viewModel)
                         
                     }
-                    .padding(15)
+                    
+                    Spacer()
+                    
                 }
             }
         }
-        .task {
+        .task(id: isEditable) {
             await viewModel.getInitialProfile()
         }
             

@@ -15,7 +15,7 @@ struct textModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .padding()
+            .padding(10)
             .background(Color(.white))
             .cornerRadius(roundedCorners)
             .padding(1)

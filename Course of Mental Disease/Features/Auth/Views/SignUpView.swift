@@ -38,6 +38,7 @@ struct SignUpView: View {
                     
                     //SignUp Form
                     TextField("E-mail:", text: $viewModel.email)
+                        .padding(3)
                         .frame(width: 250)
                         .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                         .keyboardType(.emailAddress)
@@ -46,6 +47,7 @@ struct SignUpView: View {
                         .autocapitalization(.none)
                     
                     TextField("Имя:", text: $viewModel.name)
+                        .padding(3)
                         .frame(width: 250)
                         .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                         .disableAutocorrection(true)
@@ -54,6 +56,7 @@ struct SignUpView: View {
                     
                     HStack {
                         SecureField("Пароль:", text: $viewModel.password)
+                            .padding(3)
                             .disableAutocorrection(true)
                             .autocapitalization(.none)
                             .textContentType(.password)
@@ -61,13 +64,13 @@ struct SignUpView: View {
                             .onTapGesture {
                                 showPopover.toggle()
                             }
-                    }
-                    .popover(isPresented: $showPopover) {
-                        Text("Пароль должен состоять не менее чем из 6 символов и содержать заглавные и строчные буквы, а также как минимум одну цифру и спецсимвол")
-                            .padding(3)
-                            .font(.custom("Comfortaa-Bold", size: 12))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .presentationCompactAdaptation(.popover)
+                            .popover(isPresented: $showPopover) {
+                                Text("Пароль должен состоять не менее чем из 6 символов и содержать заглавные и строчные буквы, а также как минимум одну цифру и спецсимвол")
+                                    .padding(3)
+                                    .font(.custom("Comfortaa-Bold", size: 12))
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .presentationCompactAdaptation(.popover)
+                            }
                     }
                     .frame(width: 250)
                     .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))

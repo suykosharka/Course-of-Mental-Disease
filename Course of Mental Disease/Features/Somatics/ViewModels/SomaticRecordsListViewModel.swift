@@ -10,21 +10,22 @@ import Factory
 
 final class SomaticRecordsListViewModel: ObservableObject {
     
+    @Published var isRecordsLoading = false
+    @Published var somatics: [Somatics]? = nil
+    
     @Injected(\.authService) private var authService
     @Injected(\.somaticService) private var somaticService
     @Injected(\.errorHandler) private var errorHandler
-    @Published var isLoading = false
-        private var currentPage = 1
-        private var canLoadMore = true
-
-    
-    @Published var somatics: [Somatics]? = nil
     
     func fetchSomatics() async {
         do {
+            await MainActor.run { self.isRecordsLoading = true }
             let currentUserId = try await authService.getCurrentUserID()
             let somatics = try await somaticService.fetchSomaticRecords(userID: currentUserId)
-            await MainActor.run { self.somatics = somatics }
+            await MainActor.run {
+                self.somatics = somatics
+                self.isRecordsLoading = false
+            }
         } catch {
             errorHandler.handle(error)
         }

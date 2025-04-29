@@ -15,4 +15,8 @@ protocol SomaticServiceProtocol {
     
     func uploadSomatic(_ record: Somatics) async throws
     
+    func updateSomaticRecord(_ record: Somatics) async throws
+    
+    func deleteSomaticRecord(_ record: Somatics) async throws
+    
 }

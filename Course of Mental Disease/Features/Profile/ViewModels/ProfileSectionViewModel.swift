@@ -11,8 +11,9 @@ import Factory
 
 final class ProfileSectionViewModel: ObservableObject {
     
-    @Published var name = ""
-    @Published var email = ""
+    @Published var name = "Имя"
+    @Published var birthDate = "Дата рождения"
+    @Published var diagnosis = "Диагноз"
     @Published var image: UIImage?
     
     @Injected(\.profileService) private var profileService
@@ -27,12 +28,13 @@ final class ProfileSectionViewModel: ObservableObject {
             if let avatarURL = profile.avatarURL, !avatarURL.isEmpty {
                let data = try await storageService.downloadImage(avatarURL)
                 await MainActor.run {
-                    image = UIImage(data: data)
+                    self.image = UIImage(data: data)
                 }
              }
             await MainActor.run {
-                name = profile.name ?? ""
-                email = profile.email ?? ""
+                self.name = profile.name ?? "Имя"
+                self.birthDate = profile.birthDate ?? "Дата рождения"
+                self.diagnosis = profile.diagnosis ?? "Диагноз"
                 AppLoadStateManager.shared.isProfileLoaded = true
             }
         } catch {

@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 enum DateRangeType: String, Identifiable, CaseIterable {
     case today = "Сегодня"
     case yesterday = "Вчера"

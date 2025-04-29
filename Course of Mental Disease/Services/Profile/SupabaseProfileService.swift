@@ -19,4 +19,12 @@ final class SupabaseProfileService: ProfileServiceProtocol {
           .value
     }
     
+    func updateProfile(for userID: String, profile: Profile) async throws {
+        try await supabase
+            .from("profiles")
+            .update(profile)
+            .eq("id", value: userID)
+            .execute()
+    }
+    
 }

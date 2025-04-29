@@ -24,6 +24,7 @@ struct LogInView: View {
                     
                     //LogIn Form
                     TextField("E-mail:", text: $viewModel.email)
+                        .padding(3)
                         .frame(width: 250)
                         .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                         .keyboardType(.emailAddress)
@@ -32,6 +33,7 @@ struct LogInView: View {
                         .textContentType(.emailAddress)
                     
                     SecureField("Пароль:", text: $viewModel.password)
+                        .padding(3)
                         .frame(width: 250)
                         .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
                         .disableAutocorrection(true)

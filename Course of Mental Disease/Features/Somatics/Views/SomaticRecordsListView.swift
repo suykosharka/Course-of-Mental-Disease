@@ -26,41 +26,27 @@ struct SomaticRecordsListView: View {
                 Rectangle()
                     .foregroundColor(.sugarMilk)
                     .ignoresSafeArea()
-                
-                if let somatics = viewModel.somatics {
+                if viewModel.isRecordsLoading {
+                    ProgressView()
+                } else if let somatics = viewModel.somatics {
                     List {
                         ForEach(somatics.filter{
                             searchText.isEmpty || $0.date.contains(searchText)
-                        }, id: \.self) { item in
+                        }, id: \.self) { record in
                             NavigationLink {
-                                let apetite = Rates.Apetite(rawValue: item.apetiteRate)!
-                                let sleep = Rates.Sleep(rawValue: item.sleepRate)!
-                                let energy = Rates.Energy(rawValue: item.energyRate)!
-                                let libido = Rates.Libido(rawValue: item.libidoRate)!
-                                SomaticRecordView(apetite: apetite, sleep: sleep, energy: energy, libido: libido)
+                                SomaticRecordView(viewModel: SomaticRecordViewModel(record: record))
                             } label: {
                                 HStack {
-                                    Text(item.date)
+                                    Text("Запись за: \(record.date.formattedDateString())")
+                                        .padding(5)
                                 }
                             }
                             .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
                         }
                         .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     }
                     .listStyle(.plain)
-                    .toolbarRole(.editor)
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            VStack {
-                                Text("Записи")
-                                    .frame(height: 0)
-                                    .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
-                            }
-                        }
-                    }
-                    .searchable(text: $searchText, prompt: prompt)
-                    .font(.custom("Comfortaa-Bold", size: 15))
                    
                 }
                 
@@ -70,7 +56,20 @@ struct SomaticRecordsListView: View {
                     await viewModel.fetchSomatics()
                 }
             }
+            .toolbarRole(.editor)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text("Записи")
+                            .padding(-2)
+                            .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                    }
+                }
+            }
         }
+        .searchable(text: $searchText, prompt: prompt)
+        .font(.custom("Comfortaa-Bold", size: 15))
         
     }
 }

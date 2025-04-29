@@ -45,8 +45,8 @@ struct SectionsFlowView: View {
                                 ToolbarItem(placement: .principal) {
                                     VStack {
                                         Text("Профиль")
-                                            .frame(height: 0)
                                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
+                                            .padding(.bottom, 5)
                                     }
                                 }
                             }
@@ -65,8 +65,8 @@ struct SectionsFlowView: View {
                                 ToolbarItem(placement: .principal) {
                                     VStack {
                                         Text("Соматические проявления")
-                                            .frame(height: 0)
                                             .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                                            .padding(.bottom, 5)
                                     }
                                 }
                             }

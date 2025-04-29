@@ -11,4 +11,6 @@ protocol ProfileServiceProtocol {
     
     func fetchProfile(for userID: String) async throws -> Profile
     
+    func updateProfile(for userID: String, profile: Profile) async throws
+    
 }

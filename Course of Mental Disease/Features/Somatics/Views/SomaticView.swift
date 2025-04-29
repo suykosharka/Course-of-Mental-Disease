@@ -46,20 +46,18 @@ struct SomaticView: View {
 
                 //Custom range datepickers
                 if viewModel.range == .customRange {
-                    VStack (alignment: .leading) {
-                        
-                        //Start date
-                        DatePicker(selection: $viewModel.startDate,
-                                   in: ...viewModel.endDate,
-                                   displayedComponents: .date,
-                                   label: {
-                            Text("С")
-                        }
-                        )
-                        .frame(width: 200, height: 15)
-                        .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
-                        
-                        HStack() {
+                    HStack(alignment: .center, spacing: 20) {
+                        VStack(alignment: .center, spacing: 10) {
+                            //Start date
+                            DatePicker(selection: $viewModel.startDate,
+                                       in: ...viewModel.endDate,
+                                       displayedComponents: .date,
+                                       label: {
+                                Text("С")
+                            }
+                            )
+                            .frame(height: 15)
+                            .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
                             
                             //End date
                             DatePicker(selection: $viewModel.endDate,
@@ -69,8 +67,12 @@ struct SomaticView: View {
                                         Text("По")
                                     }
                             )
-                            .frame(width: 200, height: 15)
+                            .frame(height: 15)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                        }
+                        .fixedSize()
+                        
+                        VStack() {
                             
                             //Show button
                             
@@ -86,9 +88,7 @@ struct SomaticView: View {
                             
                         }
                     }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing)
-                    .padding(.bottom, 30)
+                    .padding()
                     
                 }
                 

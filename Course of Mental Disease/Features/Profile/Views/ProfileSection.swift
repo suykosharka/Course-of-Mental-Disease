@@ -33,15 +33,15 @@ struct ProfileSection: View {
                     Avatar(image: viewModel.image, color: .highPlateau, diameter: 125)
                     
                     //Profile Info
-                    VStack (alignment: .center, spacing: 15){
+                    VStack (alignment: .center, spacing: 10){
                         Text(viewModel.name)
-                            .frame(width: 155, height: 0)
+                            .frame(width: 155)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
-                        Text(viewModel.email)
-                            .frame(width: 155, height: 0)
+                        Text(viewModel.birthDate.formattedDateString())
+                            .frame(width: 155)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
-                        Text(viewModel.name)
-                            .frame(width: 155, height: 0)
+                        Text(viewModel.diagnosis)
+                            .frame(width: 155)
                             .modifier(textModifier(roundedCorners: 22, borderColor: .highPlateau, textColor: .gray))
                     }
                 }

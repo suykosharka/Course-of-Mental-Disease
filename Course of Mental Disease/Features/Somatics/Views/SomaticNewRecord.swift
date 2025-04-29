@@ -31,8 +31,10 @@ struct SomaticNewRecord: View {
                             Text("Дата")
                         }
                 )
-                .frame(width: 200, height: 0)
+                .fixedSize()
+                .frame(height: 15)
                 .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
+                .padding(.top, 10)
                 
                 Spacer()
                 
@@ -86,6 +88,7 @@ struct SomaticNewRecord: View {
                     Text("Сохранить запись")
                         .modifier(buttonModifier(borderColor: .muddyMauve, textColor: .white, backgroundColor: .muddyMauve))
                 }
+                .padding(.bottom, 10)
             }
         }
         .tint(.muddyMauve)

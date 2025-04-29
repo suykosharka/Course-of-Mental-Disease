@@ -20,7 +20,7 @@ struct CustomGauge: View {
                 Image(systemName: imageName)
                     .foregroundStyle(.gray)
                 Text(title)
-                    .frame(width: 125, height: 0)
+                    .frame(width: 125)
                     .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .gray))
             }
             .padding(.bottom, 1)

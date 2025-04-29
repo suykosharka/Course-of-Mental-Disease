@@ -21,6 +21,7 @@ struct CustomPicker<Content: View>: View {
             label: {
                 HStack() {
                     Text(value)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     Image(systemName: "chevron.down")
                 }
             }
@@ -29,7 +30,8 @@ struct CustomPicker<Content: View>: View {
                 .font(.custom("Comfortaa-Bold", size: 15))
                 .foregroundStyle(.gray)
         }
-        .frame(maxWidth: .infinity)
+        .padding(.vertical, -10)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .backgroundStyle(.white)
         .modifier(textModifier(roundedCorners: 22, borderColor: .muddyMauve, textColor: .muddyMauve))
         .padding(.horizontal, 15)
@@ -38,7 +40,21 @@ struct CustomPicker<Content: View>: View {
 }
 
 #Preview {
-    CustomPicker(value: "sdad", label: "asfaFa", content: {
-        Text("dsffs")
-    })
+    VStack {
+        CustomPicker(value: "sdadуколаршоаиуклоаиуколаилкуоиаокулаилокуаиолкуаиокуиаолкуиаоикулоаикуолаиолкуаиолкиаолукиаоликуоаикуолаикуол", label: "asfaFa", content: {
+            Text("dsffs")
+        })
+        CustomPicker(value: "sdadуколаршоаиуклоаиуколаилкуоиаокулаилокуаиолкуаиокуиаолкуиаоикулоаикуолаиолкуаиолкиаолукиаоликуоаикуолаикуол", label: "asfaFa", content: {
+            Text("dsffs")
+        })
+        CustomPicker(value: "sdadуколаршоаиуклоаиуколаилкуоиаокулаилокуаиолкуаиокуиаолкуиаоикулоаикуолаиолкуаиолкиаолукиаоликуоаикуолаикуол", label: "asfaFa", content: {
+            Text("dsffs")
+        })
+        CustomPicker(value: "sdadуколаршоаиуклоаиуколаилкуоиаокулаилокуаиолкуаиокуиаолкуиаоикулоаикуолаиолкуаиолкиаолукиаоликуоаикуолаикуол", label: "asfaFa", content: {
+            Text("dsffs")
+        })
+        CustomPicker(value: "sdadуколаршоаиуклоаиуколаилкуоиаокулаилокуаиолкуаиокуиаолкуиаоикулоаикуолаиолкуаиолкиаолукиаоликуоаикуолаикуол", label: "asfaFa", content: {
+            Text("dsffs")
+        })
+    }
 }

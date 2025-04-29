@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct Profile: Decodable {
+struct Profile: Decodable, Encodable {
     
-  let email: String?
-  let name: String?
-  let avatarURL: String?
+    let name: String?
+    let sex: String?
+    let diagnosis: String?
+    let birthDate: String?
+    let avatarURL: String?
 
-  enum CodingKeys: String, CodingKey {
-    case email
-    case name = "full_name"
-    case avatarURL = "avatar_url"
+    enum CodingKeys: String, CodingKey {
+        case name = "full_name"
+        case sex
+        case diagnosis
+        case birthDate = "birth_date"
+        case avatarURL = "avatar_url"
   }
     
 }

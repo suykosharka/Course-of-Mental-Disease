@@ -37,3 +37,17 @@ extension UIImage {
         }
     }
 }
+
+extension String {
+    func formattedDateString() -> String {
+            let inputFormatter = DateFormatter()
+            inputFormatter.dateFormat = "yyyy-MM-dd"
+            inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+            guard let date = inputFormatter.date(from: self) else { return self }
+
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "dd.MM.yyyy"
+            return outputFormatter.string(from: date)
+        }
+    }

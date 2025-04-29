@@ -42,21 +42,18 @@ struct SomaticFlowView: View {
         TabView(selection: $selectedTab){
             
             SomaticNewRecord()
-                .transition(.move(edge: .leading))
                 .tabItem {
                     Label("Добавить", systemImage: "plus")
                 }
                 .tag(Tab.new)
             
             SomaticView()
-                .transition(.move(edge: .trailing))
                 .tabItem {
                     Label("Индикаторы", systemImage: "slider.horizontal.3")
                 }
                 .tag(Tab.indicators)
             
             SomaticRecordsListView()
-                .transition(.opacity)
                 .tabItem {
                     Label("Записи", systemImage: "list.dash")
                 }

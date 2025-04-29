@@ -13,6 +13,7 @@ final class SupabaseSomaticService: SomaticServiceProtocol {
         try await supabase.from("somatics")
             .select()
             .eq("profile_id", value: userID)
+            .order("created_at", ascending: false)
             .execute()
             .value
     }
@@ -37,6 +38,24 @@ final class SupabaseSomaticService: SomaticServiceProtocol {
         try await supabase
             .from("somatics")
             .insert(record)
+            .execute()
+    }
+    
+    func updateSomaticRecord(_ record: Somatics) async throws {
+        try await supabase
+            .from("somatics")
+            .update(record)
+            .eq("profile_id", value: record.profile_id)
+            .eq("created_at", value: record.date)
+            .execute()
+    }
+    
+    func deleteSomaticRecord(_ record: Somatics) async throws {
+        try await supabase
+            .from("somatics")
+            .delete()
+            .eq("profile_id", value: record.profile_id)
+            .eq("created_at", value: record.date)
             .execute()
     }
     

@@ -68,18 +68,19 @@ struct EditableAvatar: View {
                 .onTapGesture {
                     isPhotoPicker = true
                 }
-                .confirmationDialog("Select your profile Picture", isPresented: $isPhotoPicker) {
+                .confirmationDialog("Выберите изображение", isPresented: $isPhotoPicker) {
                     Button {
                         cameraShowSheet = true
                     } label: {
-                        Label("Take a photo", systemImage: "questionmark.circle")
+                        Label("Сделать снимок", systemImage: "questionmark.circle")
                     }
                     
                     Button {
                         albumShowSheet = true
                     } label: {
-                        Label("Select from library", systemImage: "questionmark.circle")
+                        Label("Выбрать из галереи", systemImage: "questionmark.circle")
                     }
+                    Button("Отменить", role: .cancel) { }
                 }
         } else {
             Image(systemName: "person.circle")
@@ -97,18 +98,19 @@ struct EditableAvatar: View {
                 .onTapGesture {
                     isPhotoPicker = true
                 }
-                .confirmationDialog("Select your profile Picture", isPresented: $isPhotoPicker) {
+                .confirmationDialog("Выберите изображение", isPresented: $isPhotoPicker) {
                     Button {
                         cameraShowSheet = true
                     } label: {
-                        Label("Take a photo", systemImage: "questionmark.circle")
+                        Label("Сделать снимок", systemImage: "questionmark.circle")
                     }
                     
                     Button {
                         albumShowSheet = true
                     } label: {
-                        Label("Select from library", systemImage: "questionmark.circle")
+                        Label("Выбрать из галереи", systemImage: "questionmark.circle")
                     }
+                    Button("Отменить", role: .cancel) { }
                 }
 
         }
