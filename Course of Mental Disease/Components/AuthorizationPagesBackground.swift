@@ -32,8 +32,8 @@ struct AuthorizationPagesBackground: View {
     AuthorizationPagesBackground()
 }
 #Preview {
-    SignUpView()
+    SignUpView(onBackTap: { print("LogIn") })
 }
 #Preview {
-    LogInView()
+    LogInView(onSignUpTap: { print("SignUp") })
 }

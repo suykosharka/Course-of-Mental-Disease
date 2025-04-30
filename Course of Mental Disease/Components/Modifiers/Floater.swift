@@ -35,9 +35,9 @@ struct Floater: ViewModifier {
             $0
                 .type(.floater())
                 .displayMode(.overlay)
-                .useKeyboardSafeArea(true)
                 .position(.top)
-                .closeOnTapOutside(true)
+                .closeOnTap(false)
+                .dragToDismiss(false)
                 .autohideIn(3)
                 .dismissCallback {
                     isShowing = false

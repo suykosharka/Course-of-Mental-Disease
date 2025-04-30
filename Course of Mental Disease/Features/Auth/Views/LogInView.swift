@@ -10,67 +10,64 @@ import PopupView
 
 struct LogInView: View {
     
+    var onSignUpTap: () -> Void
     @StateObject var viewModel = LogInViewViewModel()
     @State private var showError = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
+        ZStack {
+            
+            //Background
+            AuthorizationPagesBackground()
+            
+            VStack(alignment: .center, spacing: 10) {
                 
-                //Background
-                AuthorizationPagesBackground()
+                //LogIn Form
+                TextField("E-mail:", text: $viewModel.email)
+                    .padding(3)
+                    .frame(width: 250)
+                    .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
+                    .keyboardType(.emailAddress)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .textContentType(.emailAddress)
                 
-                VStack(alignment: .center, spacing: 10) {
+                SecureField("Пароль:", text: $viewModel.password)
+                    .padding(3)
+                    .frame(width: 250)
+                    .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .textContentType(.password)
+                
+                HStack(alignment: .center) {
                     
-                    //LogIn Form
-                    TextField("E-mail:", text: $viewModel.email)
-                        .padding(3)
-                        .frame(width: 250)
-                        .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
-                        .keyboardType(.emailAddress)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                        .textContentType(.emailAddress)
-                    
-                    SecureField("Пароль:", text: $viewModel.password)
-                        .padding(3)
-                        .frame(width: 250)
-                        .modifier(textModifier(roundedCorners: 22, borderColor: .odeToGreen, textColor: .gray))
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                        .textContentType(.password)
-                    
-                    HStack(alignment: .center) {
-                        
-                        //Log In Button
-                        if viewModel.email == "" || viewModel.password == "" {
-                            Text("Войти")
-                                .modifier(buttonModifier(borderColor: .gray, textColor: .white, backgroundColor: .gray))
-                        }else {
-                            Button {
-                                Task {
-                                    await viewModel.logIn()
-                                }
-                            } label: {
-                                Text("Войти")
-                                    .modifier(buttonModifier(borderColor: .odeToGreen, textColor: .white, backgroundColor: .odeToGreen))
+                    //Log In Button
+                    if viewModel.email == "" || viewModel.password == "" {
+                        Text("Войти")
+                            .modifier(buttonModifier(borderColor: .gray, textColor: .white, backgroundColor: .gray))
+                    }else {
+                        Button {
+                            Task {
+                                await viewModel.logIn()
                             }
-                        }
-                        
-                        //Sign Up Button
-                        NavigationLink{
-                            SignUpView()
-                                .navigationBarBackButtonHidden(true)
                         } label: {
-                            Text("Создать аккаунт")
+                            Text("Войти")
                                 .modifier(buttonModifier(borderColor: .odeToGreen, textColor: .white, backgroundColor: .odeToGreen))
                         }
-                        
                     }
-                    .frame(width: 300)
-                    .padding(.top, 10)
+                    
+                    //Sign Up Button
+                    Text("Создать аккаунт")
+                        .modifier(buttonModifier(borderColor: .odeToGreen, textColor: .white, backgroundColor: .odeToGreen))
+                        .onTapGesture {
+                            onSignUpTap()
+                        }
                     
                 }
+                .frame(width: 300)
+                .padding(.top, 10)
+                
             }
         }
         .tint(.deadSea)
@@ -83,5 +80,5 @@ struct LogInView: View {
 }
 
 #Preview {
-    LogInView()
+    LogInView(onSignUpTap: { print("SignUp") })
 }
