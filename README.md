@@ -52,14 +52,14 @@
 - Вход по email и паролю.
 - Хранение сессии и автоматический вход (Supabase Auth).
 
-<img src="images/LoadScreenAnimation.gif" height="300" /> <img src="images/LogInScreen.jpeg" height="300" /> <img src="images/SignUpScreen.jpeg" height="300" /> <img src="images/EmptySectionScreen.jpeg" height="300" /> <img src="images/SectionScreen.jpeg" height="300" />
+<img src="images/LoadScreenAnimation.gif" height="300" /> <img src="images/LogInScreen.png" height="300" /> <img src="images/SignUpScreen.png" height="300" /> <img src="images/EmptySectionScreen.png" height="300" /> <img src="images/SectionScreen.png" height="300" />
 
 ### Профиль
 - Просмотр и редактирование персональной информации.
 - Привязка профиля к текущим данным в Supabase.
 - Реактивное обновление UI при изменении данных.
 
-<img src="images/ProfileScreen.jpeg" height="300" /> <img src="images/EditableProfilescreen.jpeg" height="300" />
+<img src="images/ProfileScreen.png" height="300" /> <img src="images/EditableProfileScreen.png" height="300" />
 
 ### Соматические данные
 - Ведение дневника соматических симптомов.
@@ -67,7 +67,7 @@
 - Хранение данных в Supabase с последующей загрузкой в реальном времени и отображением на индикотарох для опеределеия динамики показателя за временной промежуток.
 - Интерактивный список симптомов по дате, с возможностью перехода к записи за определённую дату, для редактирования или удаления записи.
 
-<img src="images/EmptySomaticScreen.jpeg" height="300" /> <img src="images/AddRecordScreen.jpeg" height="300" /> <img src="images/RecordsListScreen.jpeg" height="300" /> <img src="images/RecordEditScreen.jpeg" height="300" /> <img src="images/SomaticSreen.jpeg" height="300" /> <img src="images/SomaticRangeScreen.jpeg" height="300" />
+<img src="images/EmptySomaticScreen.png" height="300" /> <img src="images/AddRecordScreen.png" height="300" /> <img src="images/RecordListScreen.png" height="300" /> <img src="images/RecordEditScreen.png" height="300" /> <img src="images/SomaticScreen.png" height="300" /> <img src="images/SomaticRangeScreen.png" height="300" />
 
 ### Тестирование
 Тесты написаны для бизнес-логики экранов авторизации и регистрации.
